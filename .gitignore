@@ -1,0 +1,20 @@
+# Exclude everything 
+*
+
+# But include .config/nvim and .config/tmux folders
+!.config/nvim/
+!.config/tmux/
+
+# Exclude everything again  
+# *
+
+# But re-include .config/nvim and .config/tmux recursively
+!.config/nvim/**
+!.config/tmux/tmux.conf
+
+
+# Single files
+!.gitignore
+!.gitconfig
+!.keybinds
+!.bashrc

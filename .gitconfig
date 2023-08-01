@@ -1,0 +1,12 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = MasterTemple
+	email = blake.scampone@gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[core]
+	sshCommand = ssh -o ConnectTimeout=45
