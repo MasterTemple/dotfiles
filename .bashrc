@@ -193,6 +193,11 @@ alias f="fzfnvim"
 alias fd="/home/dglinuxtemple/Development/bash/fd.sh"
 alias fcd="/home/dglinuxtemple/Development/bash/fd.sh"
 
+# Tmux - Alt+h/l for prev/next window
+bind '"\eh": "tmux previous-window\C-m"'
+bind '"\el": "tmux next-window\C-m"'
+bind '"\C-t": "tmux new-window\C-m"'
+
 tmux
 clear # remove warning :D
 
