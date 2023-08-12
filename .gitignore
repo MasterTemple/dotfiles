@@ -6,6 +6,7 @@
 !.gitconfig
 !.keybinds
 !.bashrc
+!.mt_setup.sh
 
 
 # Specifically include .config

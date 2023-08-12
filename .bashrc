@@ -136,6 +136,7 @@ alias paste="getcb | echo; getcb | bash"
 #alias hide="echo Sleeping...;sleep .1;systemctl suspend -i;"
 alias gn="echo Goodnight!;systemctl poweroff -i;"
 alias hide="echo Sleeping...;systemctl suspend -i;"
+alias h="hide"
 alias python="python3.9"
 alias py="python3.9"
 alias clera="clear"
@@ -149,6 +150,10 @@ alias esvs="cd ~/Development/python/esvsearch/;python main.py"
 alias esf='esvr'
 alias es='esvs' # esv search
 alias er='esvr' # esv reference
+alias v='nvim'
+alias x='exit'
+alias vimw='nvim ~/vimwiki/index.md'
+alias vw='nvim ~/vimwiki/index.md'
 # alias verse="~/Development/python/verses/verse"
 
 # >>> conda initialize >>>
@@ -198,6 +203,6 @@ bind '"\eh": "tmux previous-window\C-m"'
 bind '"\el": "tmux next-window\C-m"'
 bind '"\C-t": "tmux new-window\C-m"'
 
-tmux
-clear # remove warning :D
+# tmux
+# clear # remove warning :D
 
