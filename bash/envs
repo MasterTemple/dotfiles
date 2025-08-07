@@ -1,0 +1,60 @@
+# Editor used by CLI
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="$EDITOR"
+
+export UV_HTTP_TIMEOUT=500000
+export TYPST_FEATURES="html"
+
+# to run brick mesa
+WINEDLLOVERRIDES="dinput8.dll=n,b"
+PROTON_USE_WINED3D=1
+
+
+export LD_LIBRARY_PATH=/home/dgmastertemple/anaconda3/lib/python3.11/site-packages/nvidia/cuda_runtime/lib/:/home/dgmastertemple/.local/lib/python3.10/site-packages/nvidia/cuda_runtime/lib/:/home/dgmastertemple/.local/lib/python3.10/site-packages/nvidia/cudnn/lib:/home/dgmastertemple/anaconda3/envs/whisperx/lib/python3.10/site-packages/torch/lib:/home/dgmastertemple/anaconda3/pkgs/pytorch-2.0.0-py3.10_cuda11.8_cudnn8.7.0_0/lib/python3.10/site-packages/torch/lib:$LD_LIBRARY_PATH
+export PATH="/usr/local/llvm/bin:$PATH"
+export LLVM_HOME="/usr/local/llvm"
+
+CUDA_VISIBLE_DEVICES="GPU-c5c72722-5e49-d173-4a9b-217aaf4e53d7"
+
+# pnpm
+export PNPM_HOME="/home/dgmastertemple/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/dgmastertemple/.cargo/bin/
+export PATH="$PATH:/home/dgmastertemple/.screenlayout"
+
+export PATH="$INSTALL_DIR/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export BUN_INSTALL="/home/dgmastertemple/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/home/dgmastertemple/go/bin:$PATH"
+export PATH="/home/dgmastertemple/GitHub/cordless:$PATH"
+export PATH="~/Development/bash:$PATH"
+export PATH="~/Development/python/esv_cli:$PATH"
+export APACHE_RUN_DIR="/usr/bin/apache2"
+export PATH="~/Apps:$PATH"
+export PATH="/appimages:$PATH"
+export PATH="~/applications/node-v20.9.0-linux-x64/bin/:$PATH"
+export PATH="~/Development/typst/:$PATH"
+
+# export PATH="~/applications/ampl.linux-intel64:$PATH"
+export AMPL_LICFILE=$HOME/.ampl/ampl.lic
+export AMPLKEY_RUNTIME_DIR=$HOME/.ampl
+export PATH=/opt/ampl.linux-intel64/:$PATH
+
+export TMUX_PLUGIN_MANAGER_PATH="~/.config/tmux/plugins/"
+
+export PATH=".:$PATH"
+
+# tmux new
+# tmux source ~/.config/tmux/tmux.conf

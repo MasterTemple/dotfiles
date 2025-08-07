@@ -1,0 +1,4 @@
+source ~/Development/dotfiles/bash/aliases
+source ~/Development/dotfiles/bash/envs
+source ~/Development/dotfiles/bash/functions
+source ~/Development/dotfiles/bash/shell

@@ -1,0 +1,22 @@
+silent() {
+  "$@" &> /dev/null 
+}
+
+cdls() {
+  local dir="$1"
+
+  if [ -z "$dir" ]; then 
+    builtin cd
+  elif [ -d "$dir" ]; then
+    builtin cd "$dir"
+  else
+    local match
+    match=$(compgen -d "$dir" | head -1)
+    if [ -n "$match" ]; then
+      echo "Autocompleted '$dir' to '$match'."
+      builtin cd "$match"
+    else
+      echo "No match found for '$dir'."
+    fi
+  fi
+}
