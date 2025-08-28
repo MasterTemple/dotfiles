@@ -37,6 +37,7 @@
 #bluetooth,
 #pulseaudio,
 #clock,
+#custom-omarchy,
 #custom-power-menu {
   min-width: 12px;
   margin: 0 7.5px;
@@ -50,9 +51,7 @@ tooltip {
   padding: 2px;
 }
 
-#submap {
-  background-color: rgb(22, 112, 172);
-  padding: 0 3px;
+#submap { background-color: rgb(22, 112, 172); padding: 0 3px;
   /* text-transform: capitalize; */
 }
 
@@ -85,4 +84,8 @@ tooltip {
 
 #battery.charging {
   color: #23D0CF;
+}
+
+#network.ethernet {
+  margin-top: 5px;
 }

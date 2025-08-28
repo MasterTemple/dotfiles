@@ -37,3 +37,15 @@ tmux source ~/.config/tmux/tmux.conf
 ### `nvim`
 
 See [`MasterTemple/kickstart.nvim`](https://github.com/MasterTemple/kickstart.nvim) as this warrants a separate repository
+
+### `plymouth`
+
+My login screen: [arch-mac-style](https://www.pling.com/p/2106821)
+
+Download, extract, and copy into `/usr/share/plymouth/themes/`
+
+Set as default theme with `sudo plymouth-set-default-theme -R arch-mac-style`
+
+```bash
+sudo plymouth-set-default-theme arch-mac-style
+```
