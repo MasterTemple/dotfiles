@@ -103,8 +103,8 @@ alias tmsr='tmux source ~/.config/tmux/tmux.conf'
 alias gogh='bash -c "$(wget -qO- https://git.io/vQgMr)"' # 34 35 36 37 53 62 102 126 148 149
 
 
-alias gn="echo Goodnight!;systemctl poweroff -i;"
-alias hide="echo Sleeping...;systemctl suspend -i;"
+alias gn="echo Goodnight!;systemctl poweroff;"
+alias hide="echo Sleeping...;systemctl suspend;"
 alias h="hide"
 
 # alias python="python3.10"

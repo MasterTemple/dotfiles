@@ -1,4 +1,3 @@
-echo 'eval "$(tv init bash)"' >> ~/.bashrc
-
+eval "$(tv init bash)"
 eval "$(starship init bash)"
 

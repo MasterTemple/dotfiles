@@ -1,4 +1,4 @@
-source ~/Development/dotfiles/bash/aliases
-source ~/Development/dotfiles/bash/envs
-source ~/Development/dotfiles/bash/functions
-source ~/Development/dotfiles/bash/shell
+source ~/.local/share/mastertemple/bash/aliases
+source ~/.local/share/mastertemple/bash/envs
+source ~/.local/share/mastertemple/bash/functions
+source ~/.local/share/mastertemple/bash/shell

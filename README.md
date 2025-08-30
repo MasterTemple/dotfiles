@@ -1,6 +1,14 @@
 These configs go hand-in-hand with Omarchy, I'm just keeping it separate so I can receive updates
 
 
+### Setup
+
+```bash
+git clone https://github.com/MasterTemple/dotfiles --depth 1 ~/.local/share/mastertemple/
+cd ~/.local/share/mastertemple/
+./setup.sh
+```
+
 ### Download
 
 Make this directory accessible as `~/.local/share/mastertemple/`
@@ -44,7 +52,7 @@ My login screen: [arch-mac-style](https://www.pling.com/p/2106821)
 
 Download, extract, and copy into `/usr/share/plymouth/themes/`
 
-Set as default theme with `sudo plymouth-set-default-theme -R arch-mac-style`
+Set as default theme with `sudo plymouth-set-default-theme -R arch-mac-style` (this didn't change on screen, only off screen)
 
 ```bash
 sudo plymouth-set-default-theme arch-mac-style
