@@ -6,6 +6,7 @@ These configs go hand-in-hand with Omarchy, I'm just keeping it separate so I ca
 ```bash
 git clone https://github.com/MasterTemple/dotfiles --depth 1 ~/.local/share/mastertemple/
 cd ~/.local/share/mastertemple/
+chmod +x setup.sh
 ./setup.sh
 ```
 
