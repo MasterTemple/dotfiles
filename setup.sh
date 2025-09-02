@@ -29,10 +29,9 @@ fi
 git clone https://github.com/MasterTemple/kickstart.nvim ~/.config/nvim
 
 # TMUX
-# yay -S tmux
+yay -S tmux
 mkdir ~/.config/tmux
 cp "$MT/tmux/tmux.conf" ~/.config/tmux
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# ~/.tmux/plugins/tpm/bin/install_plugins
-# tmux source ~/.config/tmux/tmux.conf
-#
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
+tmux source ~/.config/tmux/tmux.conf

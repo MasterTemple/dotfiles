@@ -62,5 +62,5 @@ Download, extract, and copy into `/usr/share/plymouth/themes/`
 Set as default theme with `sudo plymouth-set-default-theme -R arch-mac-style` (this didn't change on screen, only off screen)
 
 ```bash
-sudo plymouth-set-default-theme arch-mac-style
+sudo plymouth-set-default-theme arch-mac-style -R
 ```
