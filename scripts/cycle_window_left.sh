@@ -1,7 +1,7 @@
 #!/bin/bash
 focused_mon=$(hyprctl activewindow -j | jq -r '.monitor')
 
-notify-send "$focused_mon"
+# notify-send "$focused_mon"
 
 case "$focused_mon" in
   eDP-2)
