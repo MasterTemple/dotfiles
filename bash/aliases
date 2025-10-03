@@ -62,39 +62,29 @@ fzf_history() {
 }
 alias hs='fzf_history'
 
-# alias sk='screenkey -p fixed -g 300x60+1600+940 -f "DroidSansMono Nerd Font Bold 10" -s small --persist'
-# alias sk='screenkey -p fixed -g 300x60+1600+940 -f "DroidSansM Nerd Font 10" -s small --persist'
-alias sk1='screenkey -t 0.4 -p fixed -g 300x40+1600+940 -f "DroidSansM Nerd Font 10" -s small --persist' # 1 monitor
-alias sk3='screenkey -t 0.4 -p fixed -g 300x40+2650+1840 -f "DroidSansM Nerd Font 10" -s small --persist' # 3 monitors
-# moved middle monitor up
-alias sk3='screenkey -t 0.4 -p fixed -g 300x40+2650+1440 -f "DroidSansM Nerd Font 10" -s small --persist' # 3 monitors
+# # alias sk='screenkey -p fixed -g 300x60+1600+940 -f "DroidSansMono Nerd Font Bold 10" -s small --persist'
+# # alias sk='screenkey -p fixed -g 300x60+1600+940 -f "DroidSansM Nerd Font 10" -s small --persist'
+# alias sk1='screenkey -t 0.4 -p fixed -g 300x40+1600+940 -f "DroidSansM Nerd Font 10" -s small --persist' # 1 monitor
+# alias sk3='screenkey -t 0.4 -p fixed -g 300x40+2650+1840 -f "DroidSansM Nerd Font 10" -s small --persist' # 3 monitors
+# # moved middle monitor up
+# alias sk3='screenkey -t 0.4 -p fixed -g 300x40+2650+1440 -f "DroidSansM Nerd Font 10" -s small --persist' # 3 monitors
 
-alias hog="python /home/dgmastertemple/Development/python/hymnal/select.py"
-alias tb="/home/dgmastertemple/Documents/textbooks/select_textbook.sh"
-alias syl="/home/dgmastertemple/Documents/syllabi/select_syllabi.sh"
+# alias hog="python /home/dgmastertemple/Development/python/hymnal/select.py"
+# alias tb="/home/dgmastertemple/Documents/textbooks/select_textbook.sh"
+# alias syl="/home/dgmastertemple/Documents/syllabi/select_syllabi.sh"
+
 alias cwd="pwd | wl-copy" # copy working directory
 alias cfp='realpath "$(tv)" | wl-copy' # copy file path
 alias cdp='realpath "$(tv dirs)" | wl-copy' # copy file path
-# alias lua="lua5.1"
-
-# find file with fzf then open with nvim
-# fzfnvim() {
-# 	fzf --exact --preview 'cat {}' | sed 's/ /\\ /g' | xargs -d '\n' nvim
-# }
-# alias f="fzfnvim"
-# alias fv="fzf --exact --preview 'cat {}' | sed 's/ /\\ /g' | xargs -d '\n' nvim" # open with nvim
-# alias fo="fzf --exact --preview 'cat {}' | sed 's/ /\\ /g' | xargs -d '\n' open" # open with default app
-# alias fc="fzf --exact --preview 'cat {}' | sed 's/ /\\ /g' | xargs -d '\n' code" # open with vscode
-# alias fp="fzf --exact --preview 'cat {}' | sed 's/ /\\\\ /g' | xargs -d '\\n' echo | tr -d '\n' | xclip -selection clipboard" # copy file path
-# alias fa="fzf --exact --preview 'cat {}' | sed 's/ /\\\\ /g' | xargs -d '\\n' -I {} sh -c 'echo $(realpath {})' | tr -d '\n' | xclip -selection clipboard" # copy absolute file path
-# alias fod="fzf --exact --preview 'cat {}' | sed 's/ /\\ /g' | xargs -d '\n' cd" # cd to path
-#
-# alias fd="/home/dgmastertemple/Development/bash/fd.sh"
-# alias td="python /home/dgmastertemple/Development/python/todoist/app/main.py"
-# alias utd="python /home/dgmastertemple/Development/python/todoist/app/canvas_api.py"
 
 
+
+alias v='nvim'
 alias x='exit'
+alias gn="echo Goodnight!;systemctl poweroff;"
+alias hide="echo Sleeping...;systemctl suspend;"
+alias h="hide"
+
 alias vimw='nvim ~/vimwiki/index.md'
 alias vw='nvim ~/vimwiki/index.md'
 alias nv="nvim ~/.config/nvim/init.lua -c \":Telescope find_files<CR>\""
@@ -103,33 +93,31 @@ alias tmsr='tmux source ~/.config/tmux/tmux.conf'
 alias gogh='bash -c "$(wget -qO- https://git.io/vQgMr)"' # 34 35 36 37 53 62 102 126 148 149
 
 
-alias gn="echo Goodnight!;systemctl poweroff;"
-alias hide="echo Sleeping...;systemctl suspend;"
-alias h="hide"
 
 # alias python="python3.10"
 # alias py="python3.10"
 # alias python="/home/dgmastertemple/anaconda3/bin/python"
 # alias py="/home/dgmastertemple/anaconda3/bin/python"
 alias clera="clear"
-alias git_creds="echo MasterTemple\npassword"
+# alias git_creds="echo MasterTemple\npassword"
 alias vim="nvim"
 alias nano="nvim"
-alias brave="brave-browser"
-alias fullscreen='printf "\e[9;1t"'
-alias esvr="cd ~/Development/python/esvref/;python main.py"
-alias esvs="cd ~/Development/python/esvsearch/;python main.py"
-alias esf='esvr'
-alias es='esvs' # esv search
-alias er='esvr' # esv reference
-alias v='nvim'
-# for vision in television and cause v is my nvim command
-alias vs='v "$(tv)"'
-alias fd='cd "$(tv dirs)"'
-alias vd='cd "$(tv dirs)" && nvim'
-alias fv='nvim "$(tv)"'
-# alias fo='cd Obsidian; echo "$(tv files)" | xargs nvim'
-alias fo='cd ~/Obsidian && nvim "$(tv files)"'
+
+# alias brave="brave-browser"
+# alias fullscreen='printf "\e[9;1t"'
+# alias esvr="cd ~/Development/python/esvref/;python main.py"
+# alias esvs="cd ~/Development/python/esvsearch/;python main.py"
+# alias esf='esvr'
+# alias es='esvs' # esv search
+# alias er='esvr' # esv reference
+
+# # for vision in television and cause v is my nvim command
+# alias vs='v "$(tv)"'
+# alias fd='cd "$(tv dirs)"'
+# alias vd='cd "$(tv dirs)" && nvim'
+# alias fv='nvim "$(tv)"'
+# # alias fo='cd Obsidian; echo "$(tv files)" | xargs nvim'
+# alias fo='cd ~/Obsidian && nvim "$(tv files)"'
 
 # some more ls aliases
 alias sl="ls"
@@ -154,3 +142,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias wifi='impala'
+
+ alias sv='cd "$(tv files)"; nvim .' # files
+ alias sd='cd "$(tv dirs)"' # directories
+ alias so='cd ~/Obsidian && nvim "$(tv files)"' # obsidian files
+ alias sn='cd ~/.config/nvim && nvim "$(tv files)"' # neovim files
+ alias sp='zathura "$(tv pdf)"' # pdfs
