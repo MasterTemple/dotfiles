@@ -143,9 +143,10 @@ fi
 
 alias wifi='impala'
 
- alias sv='cd "$(tv files)"; nvim .' # files
- alias sd='cd "$(tv dirs)"' # directories
- alias so='cd ~/Obsidian && nvim "$(tv files)"' # obsidian files
- alias sn='cd ~/.config/nvim && nvim "$(tv files)"' # neovim files
- alias sp='zathura "$(tv pdf)"' # pdfs
- alias sa='open "$(tv all)"' # pall files
+alias sv='cd "$(tv files)"; nvim .' # files
+alias sd='cd "$(tv dirs)"' # directories
+alias so='cd ~/Obsidian && nvim "$(tv files)"' # obsidian files
+alias sn='cd ~/.config/nvim && nvim "$(tv files)"' # neovim files
+alias sp='zathura "$(tv pdf)"' # pdfs
+alias sa='open "$(tv all)"' # pall files
+alias shtml='bravefile "$(tv html)"' # pdfs
