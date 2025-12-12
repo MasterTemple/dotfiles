@@ -74,8 +74,8 @@ alias hs='fzf_history'
 # alias syl="/home/dgmastertemple/Documents/syllabi/select_syllabi.sh"
 
 alias cwd="pwd | wl-copy" # copy working directory
-alias cfp='realpath "$(tv)" | wl-copy' # copy file path
-alias cdp='realpath "$(tv dirs)" | wl-copy' # copy file path
+alias cfp='realpath "$(tv all)" | wl-copy' # copy file path
+alias cdp='realpath "$(tv dirs)" | wl-copy' # copy directory path
 
 
 
