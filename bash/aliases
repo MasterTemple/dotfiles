@@ -24,10 +24,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Tools
-alias n='nvim'
+# alias n='nvim'
 alias g='git'
 alias d='docker'
-alias r='rails'
+# alias r='rails'
 
 # Git
 alias gcm='git commit -m'
@@ -51,6 +51,7 @@ alias rv='NVIM_APPNAME="raw" nvim'
 
 alias l3="ollama run llama3.2:1b"
 alias n="nodemon"
+alias py="python"
 
 alias cd='cdls'
 
@@ -148,5 +149,7 @@ alias sd='cd "$(tv dirs)"' # directories
 alias so='cd ~/Obsidian && nvim "$(tv files)"' # obsidian files
 alias sn='cd ~/.config/nvim && nvim "$(tv files)"' # neovim files
 alias sp='zathura "$(tv pdf)" --fork' # pdfs
+alias se='zathura "$(tv ebook)" --fork' # ebook
 alias sa='open "$(tv all)"' # pall files
 alias shtml='bravefile "$(tv html)"' # pdfs
+alias sr='speed_reader -f "$(tv all)" --wpm 600'
