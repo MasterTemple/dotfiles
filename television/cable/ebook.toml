@@ -1,0 +1,15 @@
+[metadata]
+name = "ebook"
+description = "A channel to select files and directories"
+requirements = ["fd", "bat"]
+
+[source]
+# command = ["fd -t f -e pdf", "fd -t f -e -H"]
+command = ["fd -t f -t l -e pdf -e epub -H -I"]
+
+# [preview]
+# command = "bat -n --color=always '{}'"
+# env = { BAT_THEME = "ansi" }
+
+[keybindings]
+# shortcut = "f1"
