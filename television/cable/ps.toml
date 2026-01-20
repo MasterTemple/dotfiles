@@ -1,0 +1,14 @@
+[metadata]
+name = "ps"
+description = "A channel to select processes"
+requirements = ["ps"]
+
+[source]
+command = ["ps -eo comm"]
+
+# [preview]
+# command = "bat -n --color=always '{}'"
+# env = { BAT_THEME = "ansi" }
+
+# [keybindings]
+# shortcut = "f1"

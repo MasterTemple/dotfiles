@@ -154,3 +154,5 @@ alias sa='open "$(tv all)"' # pall files
 alias shtml='bravefile "$(tv html)"' # pdfs
 alias sr='speed_reader -f "$(tv all)" --wpm 600'
 alias tw='typst watch "$(tv typst)"'
+alias sm='open "$(tv media)"' # pall files
+alias pk='output=$(tv ps); [ -n "$output" ] && pkill "$output"'
