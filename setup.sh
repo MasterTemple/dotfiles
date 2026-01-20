@@ -6,7 +6,8 @@ echo "source ~/.local/share/mastertemple/bash/rc" >> ~/.bashrc
 # Television
 cargo install cargo-binstall
 cargo binstall television
-tv update-channels
+# tv update-channels
+ln -s ~/.local/share/dotfiles/television/ ~/.config/television
 
 # hyprland
 echo "source = ~/.local/share/mastertemple/hypr/load.conf" >> ~/.config/hypr/hyprland.conf
