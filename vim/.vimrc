@@ -1,6 +1,19 @@
 " Source: https://gist.github.com/MasterTemple/f05e825a405fdd87b685562c67d69f10#file-vimrc
 
+" use system clipboard by default
 set clipboard=unnamed
+
+" qf next/prev
+nnoremap <A-n> :cnext<CR>zz
+nnoremap <A-p> :cprev<CR>zz
+
+" move current line up/down
+nnoremap <A-k> :m .-2<CR>zz
+nnoremap <A-j> :m .+1<CR>zz
+
+" move visual selection up/down (gv: reselect; =gv: auto-indent; zz: center)
+vnoremap <A-k> :m '<-2<CR>gv=gvzz
+vnoremap <A-j> :m '>+1<CR>gv=gvzz
 
 " line number
 set rnu
