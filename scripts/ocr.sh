@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies: tesseract imagemagick wl-clipboard hyprshot dunst
+# Dependencies: tesseract tesseract-data-eng  imagemagick wl-clipboard hyprshot dunst
 
 die() {
   notify-send "$1"

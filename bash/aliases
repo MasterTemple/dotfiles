@@ -53,7 +53,7 @@ alias l3="ollama run llama3.2:1b"
 alias n="nodemon"
 alias py="python"
 
-alias cd='cdls'
+# alias cd='cdls'
 
 alias fman='compgen -c | fzf | xargs man'
 
@@ -124,7 +124,7 @@ alias nano="nvim"
 alias sl="ls"
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -F'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -133,7 +133,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    # alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 

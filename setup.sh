@@ -7,7 +7,12 @@ echo "source ~/.local/share/mastertemple/bash/rc" >> ~/.bashrc
 cargo install cargo-binstall
 cargo binstall television
 # tv update-channels
+# WARN: dotfiles != mastertemple
 ln -s ~/.local/share/dotfiles/television/ ~/.config/television
+
+
+# wlr-which-key
+ln -s ~/.local/share/dotfiles/wlr-which-key/ ~/.config/wlr-which-key
 
 # hyprland
 echo "source = ~/.local/share/mastertemple/hypr/load.conf" >> ~/.config/hypr/hyprland.conf
