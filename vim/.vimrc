@@ -1,4 +1,26 @@
-" Source: https://gist.github.com/MasterTemple/f05e825a405fdd87b685562c67d69f10#file-vimrc
+" Source: https://github.com/MasterTemple/dotfiles/blob/main/vim/.vimrc
+
+" source computer-specific configuration files
+" so ~/OneDrive\ -\ caci_caci/Documents/development/languages/vim/cmds.vim
+
+" text coloring
+syntax on
+colorscheme koehler
+
+" search
+set ignorecase " I need this enabled to use smartcase
+set smartcase
+set hlsearch
+
+" navigation
+set autochdir
+
+" line number
+set rnu
+set number!
+set cursorline
+set cursorlineopt=both
+highlight CursorLineNr cterm=bold gui=bold ctermfg=red guifg=red
 
 " use system clipboard by default
 set clipboard=unnamed
@@ -15,14 +37,11 @@ nnoremap <A-j> :m .+1<CR>zz
 vnoremap <A-k> :m '<-2<CR>gv=gvzz
 vnoremap <A-j> :m '>+1<CR>gv=gvzz
 
-" line number
-set rnu
-set number!
-
 " tab settings
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set smartindent
 
 " jk -> normal mode
 inoremap jk <Esc>

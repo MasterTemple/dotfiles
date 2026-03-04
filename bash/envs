@@ -58,3 +58,5 @@ export PATH=".:$PATH"
 
 # tmux new
 # tmux source ~/.config/tmux/tmux.conf
+# 
+export PATH="$HOME/.local/bin:$PATH"

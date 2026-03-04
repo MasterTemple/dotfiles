@@ -106,3 +106,23 @@ menu:
       - key: "n"
         desc: Next
         cmd: playerctl next
+
+  - key: "s"
+    desc: "Screenshot"
+    # I must sleep in order to let the WLR overlay disappear
+    submenu:
+      - key: "r"
+        desc: Region
+        cmd: sleep 0.25s; ~/.local/share/omarchy/bin/omarchy-cmd-screenshot
+      - key: "w"
+        desc: Window
+        cmd: sleep 0.25s; ~/.local/share/omarchy/bin/omarchy-cmd-screenshot window
+      - key: "d"
+        desc: Display
+        cmd: sleep 0.25s; ~/.local/share/omarchy/bin/omarchy-cmd-screenshot output
+      - key: "c"
+        desc: Color
+        cmd: sleep 0.25s; pkill hyprpicker || hyprpicker -a
+      - key: "o"
+        desc: OCR
+        cmd: sleep 0.25s; ~/.local/share/mastertemple/scripts/ocr.sh

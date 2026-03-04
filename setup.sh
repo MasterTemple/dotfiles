@@ -10,6 +10,8 @@ cargo binstall television
 # WARN: dotfiles != mastertemple
 ln -s ~/.local/share/dotfiles/television/ ~/.config/television
 
+# neovim
+# λ ln -s ~/Dropbox/Development/dotfiles/nvim/ .
 
 # wlr-which-key
 ln -s ~/.local/share/dotfiles/wlr-which-key/ ~/.config/wlr-which-key
