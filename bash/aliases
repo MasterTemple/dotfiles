@@ -156,3 +156,13 @@ alias sr='speed_reader -f "$(tv all)" --wpm 600'
 alias tw='typst watch "$(tv typst)"'
 alias sm='open "$(tv media)"' # pall files
 alias pk='output=$(tv ps); [ -n "$output" ] && pkill "$output"'
+alias sva='source .venv/bin/activate'
+alias gm31="ollama run gemma4:31b"
+alias gm2="ollama run gemma4:e2b"
+alias bible="nvim -m ~/nt.txt ~/ot.txt"
+# [S]earch [N]eovim [E]PUB
+alias sne='cd ~/Obsidian/Library/Books/EPUB && nvim -m "$(tv epub)"'
+
+# Temporary workaround to use v0.11 because because of treesitter
+alias v='/home/dgmastertemple/Downloads/nvim-linux-x86_64.appimage'
+alias nvim='/home/dgmastertemple/Downloads/nvim-linux-x86_64.appimage'

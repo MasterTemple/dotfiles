@@ -1,0 +1,770 @@
+// Source: https://github.com/MasterTemple/dotfiles/blob/main/vscode/settings.jsonc
+{
+  //-----------------//
+  // Editor Settings //
+  //-----------------//
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+  },
+  "editor.cursorBlinking": "phase",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.indentSize": "tabSize",
+  "editor.inlayHints.enabled": "on",
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tabCompletion": "on",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.useTabStops": true,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": "on",
+  },
+
+  //-----------------//
+  // Line Formatting //
+  //-----------------//
+
+  "editor.wordWrap": "off",
+  "code-eol.newlineCharacter": "¬",
+  "code-eol.returnCharacter": "¬",
+  "code-eol.crlfCharacter": "¬",
+  "notebook.lineNumbers": "on",
+  "relative-line-endings": {
+    "color": "#85818Ea8",
+    "margin": "0 0 0 1em",
+  },
+
+  //------//
+  // Rust //
+  //------//
+
+  "rust-analyzer.semanticHighlighting.doc.comment.inject.enable": true,
+  "rust-analyzer.semanticHighlighting.operator.enable": true,
+  "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
+  "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
+  "rust-analyzer.semanticHighlighting.punctuation.specialization.enable": true,
+  "rust-analyzer.diagnostics.styleLints.enable": true,
+  "rust-analyzer.assist.preferSelf": true,
+  "rust-analyzer.completion.autoimport.enable": true,
+  "rust-analyzer.server.extraEnv": "RUSTUP_TOOLCHAIN",
+  "rust-analyzer.hover.show.enumVariants": 32,
+  "rust-analyzer.hover.show.fields": 32,
+  "rust-analyzer.hover.show.traitAssocItems": 32,
+
+  // "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+  // "rust-analyzer.completion.termSearch.enable": true,
+  // "rust-analyzer.hover.actions.references.enable": true,
+  "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+  "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+  "rust-analyzer.inlayHints.discriminantHints.enable": "always",
+  "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+  "rust-analyzer.inlayHints.parameterHints.missingArguments.enable": true,
+
+  "[rust]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true,
+    "editor.autoIndent": "keep",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+
+    "outline.showVariables": false,
+    "outline.showFields": false,
+    "outline.showEnumMembers": false,
+    "outline.showInterfaces": false,
+    "outline.showObjects": false,
+  },
+
+  //--------//
+  // Python //
+  //--------//
+
+  "python.formatting.autopep8Args": ["--indent-size=4", "--indent-tabs"],
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnType": true,
+    "editor.autoIndent": "keep",
+  },
+
+  //------------//
+  // TypeScript //
+  //------------//
+
+  "typescript.format.semicolons": "insert",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+
+  //------------//
+  // JavaScript //
+  //------------//
+
+  "javascript.format.semicolons": "insert",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+  },
+
+  //----------------//
+  // Web Frameworks //
+  //----------------//
+  "svelte.enable-ts-plugin": true,
+  "dioxus.formatOnSave": "enabled",
+
+  //------------//
+  // HTML & CSS //
+  //------------//
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue": "html",
+    "vue-html": "html",
+  },
+  "emmet.optimizeStylesheetParsing": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.useInlineCompletions": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+  },
+  "tailwindCSS.experimental.classRegex": ["class: \"(.*)\""],
+  "tailwindCSS.includeLanguages": {
+    "rust": "html",
+  },
+
+  //------//
+  // JSON //
+  //------//
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  //-----//
+  // SQL //
+  //-----//
+
+  "sqltools.useNodeRuntime": true,
+
+  //-----//
+  // C++ //
+  //-----//
+
+  "[cpp]": { "editor.defaultFormatter": "ms-vscode.cpptools" },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AccessModifierOffset: -4, DerivePointerAlignment: false, AlignTrailingComments: true, AllowShortFunctionsOnASingleLine: All, AllowShortCaseLabelsOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: true, IndentCaseLabels: true, IndentWrappedFunctionNames: false, KeepEmptyLinesAtTheStartOfBlocks: false, NamespaceIndentation: None, BraceWrapping: { AfterClass: true, AfterFunction: true, AfterControlStatement: true, SplitEmptyFunction: false, SplitEmptyRecord: false, SplitEmptyNamespace: false } }",
+
+  //-------//
+  // Typst //
+  //-------//
+
+  "[typst]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  },
+  "[typst-code]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  },
+
+  //----------//
+  // Markdown //
+  //----------//
+
+  "markdownShiki.theme": "dark_plus",
+
+  //------------//
+  // Excalidraw //
+  //------------//
+
+  "excalidraw.theme": "dark",
+
+  //-----//
+  // Vim //
+  //-----//
+
+  "vim.foldfix": false,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.matchpairs": "(:),{:},[:],<:>",
+  "vim.overrideCopy": true,
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": true,
+  "vim.visualstar": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+
+  //-------------//
+  // Color Theme //
+  //-------------//
+
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "gitDecoration.untrackedResourceForeground": "#8d6cfb",
+    "gitDecoration.modifiedResourceForeground": "#18a3ff",
+
+    "[Default Light Modern]": {
+      "editor.selectionHighlightBorder": "#ffc422",
+      "editor.wordHighlightBorder": "#ffc422",
+      "editor.lineHighlightBorder": "#ffc422c0",
+      "editorLineNumber.foreground": "#ffa600",
+      "editor.findMatchBorder": "#ffc422",
+      "editor.findMatchHighlightBorder": "#ffc422",
+      "editorWhitespace.foreground": "#4b7eff88",
+      "editor.wordHighlightTextBorder": "#ffc422",
+      "tab.activeBorder": "#ffc422",
+      "tab.border": "#ffc422",
+      "editorBracketMatch.border": "#ffc422",
+      "statusBar.background": "#00A5FC",
+      "statusBar.noFolderBackground": "#00A5FC",
+      "statusBar.debuggingBackground": "#00A5FC",
+      "editor.symbolHighlightBorder": "#ff0000",
+      "editorIndentGuide.activeBackground1": "#ffc422",
+      "editorIndentGuide.background1": "#4b7eff88",
+    },
+
+    "[Default Dark Modern]": {
+      "editor.selectionHighlightBorder": "#ffc422",
+      "editor.selectionHighlightBackground": "#00000044",
+      "editor.wordHighlightBorder": "#ffc422",
+      "editor.lineHighlightBorder": "#ffc422c0",
+      "editorCursor.foreground": "#ffffff",
+      "editorLineNumber.foreground": "#ffa600",
+      "editorLineNumber.activeForeground": "#ffffff",
+      "editor.lineHighlightBackground": "#080808",
+      "editor.background": "#111111",
+      "editor.findMatchBorder": "#ffc422",
+      "editor.findMatchHighlightBorder": "#ffc422",
+      "editorWhitespace.foreground": "#4b7eff88",
+      "editor.wordHighlightTextBorder": "#ffc422",
+      "tab.activeBorder": "#ffc422",
+      "tab.border": "#ffc422",
+      "tab.hoverBackground": "#111111",
+      "editorBracketMatch.border": "#ffc422",
+      "statusBar.background": "#00A5FC",
+      "statusBar.noFolderBackground": "#00A5FC",
+      "statusBar.debuggingBackground": "#00A5FC",
+      "statusBar.foreground": "#FFFFFF",
+      "statusBar.debuggingForeground": "#FFFFFF",
+      "editor.symbolHighlightBorder": "#ff0000",
+      "editorIndentGuide.activeBackground1": "#ffc422",
+      "editorIndentGuide.background1": "#4b7eff88",
+    },
+  },
+
+  //-----------//
+  // ErrorLens //
+  //-----------//
+
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.problemRangeDecorationEnabled": true,
+  "errorLens.selectProblemType": "activeLine",
+  "errorLens.followCursor": "allLines",
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
+  "errorLens.decorations": {
+    "errorRange": {},
+    "warningRange": {},
+    "infoRange": {},
+    "hintRange": {
+      // "textDecoration": ";border:1.2px dashed #73e45470;text-shadow:1px 1px 2px #e4545470;border-radius:0.3em;padding:0 0.5ch;",
+      // "textDecoration": ";border:1.2px dashed #73e45470;",
+      "border": "none",
+      "backgroundColor": "none",
+    },
+    "errorMessage": {},
+    "warningMessage": {},
+    "infoMessage": {},
+    "hintMessage": {
+      "border": "none",
+      "backgroundColor": "none",
+    },
+  },
+
+  //--------------//
+  // Vim Keybinds //
+  //--------------//
+
+  // VG: this is a global keybind specified in `keybind.json`, but I need to specify it as a keybinding in the vim emulator so that it doesn't break vim keybindings
+  // VO: this is a vim-only keybind that is specified for the emulator only
+  "vim.normalModeKeyBindings": [
+    //------//
+    // Misc //
+    //------//
+
+    // VG: search all commands
+    {
+      "before": ["space", ";"],
+      "commands": ["workbench.action.showCommands"],
+    },
+    // VO: comment lines
+    {
+      "before": ["space", "/"],
+      "commands": ["editor.action.commentLine"],
+    },
+    // VO: copyyank to end of line
+    {
+      "before": ["Y", "r", "r"],
+      "after": ["v", "$", "h", "y"],
+    },
+    // VO: change case
+    {
+      "before": ["space", "c", "c"],
+      "commands": ["extension.changeCase.commands"],
+    },
+    // for some reason these (which may be alt keybinds) do not work as vim normal/visualModeKeyBindings
+    // VO: add cursor on next match
+    // {
+    // 	"before": ["alt+c"],
+    // 	"commands": ["editor.action.addSelectionToNextFindMatch"],
+    // },
+    // VO: move selected lines down
+    // {
+    // 	"before": ["alt+j"],
+    // 	"commands": ["editor.action.moveLinesDownAction"],
+    // },
+    // VO: move selected lines up
+    // {
+    // 	"before": ["alt+j"],
+    // 	"commands": ["editor.action.moveLinesUpAction"],
+    // },
+
+    //----------//
+    // Movement //
+    //----------//
+
+    // VO: go to next error
+    {
+      "before": ["ctrl+]"],
+      "commands": ["go-to-next-error.next.error"],
+    },
+    // VO: go to previous error
+    {
+      "before": ["ctrl+["],
+      "commands": ["go-to-next-error.prev.error"],
+    },
+    // VO: comment lines
+    {
+      "before": ["space", "/"],
+      "commands": ["editor.action.commentLine"],
+    },
+    // VO: close all other editors in group
+    {
+      "before": ["space", "q", "o"],
+      "commands": ["workbench.action.closeOtherEditors"],
+    },
+    // VO: close all editors in group
+    {
+      "before": ["space", "q", "a"],
+      "commands": ["workbench.action.closeEditorsInGroup"],
+    },
+
+    //-------------//
+    // LSP Actions //
+    //-------------//
+
+    // VO: lsp rename symbol
+    {
+      "before": ["space", "r", "n"],
+      "commands": ["editor.action.rename"],
+    },
+    {
+      "before": ["space", "r", "a"],
+      "commands": ["editor.action.rename"],
+    },
+    // VO: active lsp hover
+    {
+      "before": ["shift+k"],
+      "commands": ["editor.action.showHover"],
+    },
+    // VO: show code actions
+    {
+      "before": ["space", "c", "a"],
+      "commands": ["editor.action.codeAction"],
+    },
+    // VO: lsp quick fix
+    {
+      "before": ["space", "enter"],
+      "commands": ["editor.action.quickFix"],
+    },
+    // VO: go to type definition (signature)
+    {
+      "before": ["g", "s"],
+      "commands": ["editor.action.goToTypeDefinition"],
+    },
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"],
+    },
+    // VO: peek type definition
+    {
+      // "before": ["space", "t"],
+      "before": ["shift+k", "t"],
+      "commands": ["editor.action.peekTypeDefinition"],
+    },
+    // VO: expand macro recursively
+    {
+      // "before": ["space", "t"],
+      "before": ["space", "r", "e"],
+      "commands": ["rust-analyzer.expandMacro"],
+    },
+    // VO: go to parent module
+    {
+      "before": ["space", "backspace"],
+      "commands": ["rust-analyzer.parentModule"],
+    },
+
+    //-------------//
+    // Search/Find //
+    //-------------//
+
+    // VO: get all references
+    {
+      "before": ["space", "r", "f"],
+      "commands": ["references-view.findReferences"],
+    },
+    {
+      "before": ["g", "r", "r"],
+      "commands": ["references-view.findReferences"],
+    },
+    // VO: next reference
+    {
+      // "before": ["alt+n"],
+      "before": ["space", "j"],
+      "commands": ["references-view.next"],
+      "after": ["enter"],
+    },
+    // VO: previous reference
+    {
+      // "before": ["alt+N"],
+      "before": ["space", "k"],
+      "commands": ["references-view.prev"],
+    },
+    // VG: find open files
+    {
+      "before": ["space", "s", "o"],
+      "commands": ["workbench.action.showAllEditors"],
+    },
+    // VG: find all files
+    {
+      "before": ["space", "s", "a"],
+      // "before": ["space", "space"],
+      "commands": ["workbench.action.quickOpen"],
+    },
+    // VG: find words in all files (Search Grep)
+    {
+      "before": ["space", "s", "g"],
+      // "before": ["space", "space"],
+      "commands": ["workbench.action.quickTextSearch"],
+    },
+    // VO: find symbol in file
+    {
+      "before": ["space", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"],
+    },
+    // VO: find symbol in workspace
+    {
+      "before": ["space", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"],
+    },
+    // VO: find references
+    {
+      "before": ["space", "s", "r"],
+      "commands": ["workbench.action.gotoReferences"],
+    },
+    // VO: open search editor
+    {
+      "before": ["space", "s", "e"],
+      "commands": ["search.action.openEditor"],
+      // "commands": ["search.action.openNewEditorToSide"],
+    },
+    // VO: focus search editor input
+    // {
+    // 	"before": ["space", "s", "i"],
+    // 	"commands": ["search.action.openNewEditor"],
+    // },
+
+    //--------------//
+    // Tabs/Windows //
+    //  Navigation  //
+    //--------------//
+
+    // ctrl+shift+h/l to move window to buffer right/left
+
+    // VO: next editor (to right) in group
+    {
+      "before": ["shift+l"],
+      "commands": ["workbench.action.nextEditorInGroup"],
+    },
+    // VO: prev editor (to left) in group
+    {
+      "before": ["shift+h"],
+      "commands": ["workbench.action.previousEditorInGroup"],
+    },
+    // VO: toggle current pane full screen
+    {
+      "before": ["space", "z"],
+      "commands": ["workbench.action.toggleMaximizeEditorGroup"],
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+    // VO: comment lines
+    {
+      "before": ["space", "/"],
+      "commands": ["editor.action.commentLine"],
+    },
+  ],
+
+  //-----------------//
+  // Better Comments //
+  //-----------------//
+
+  "better-comments.highlightMarkdown": true,
+  "better-comments.multilineComments": true,
+
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+    },
+    {
+      "tag": "/ #",
+      "color": "#3F98DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#052b00",
+      "bold": false,
+      "italic": false,
+    },
+    // doc commment
+    // {
+    //   "tag": "/",
+    //   "strikethrough": false,
+    //   "underline": false,
+    //   "backgroundColor": "#052b00",
+    //   "bold": false,
+    //   "italic": false,
+    // },
+    {
+      "tag": "warn",
+      "color": "#FCE303",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false,
+    },
+    {
+      "tag": "@ -",
+      "color": "#2FA6EF",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false,
+    },
+    {
+      "tag": "@ ?",
+      "color": "#FF9352",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false,
+    },
+    {
+      "tag": "@ >",
+      "color": "#E7EB4C",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false,
+    },
+    {
+      "tag": "@",
+      "color": "#AF86FF",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false,
+    },
+  ],
+
+  //---------------//
+  // Rust Snippets //
+  //---------------//
+
+  "rust-analyzer.completion.snippets.custom": {
+    "Arc::new": {
+      "postfix": "arc",
+      "body": "Arc::new(${receiver})",
+      "requires": "std::sync::Arc",
+      "description": "Put the expression into an `Arc`",
+      "scope": "expr",
+    },
+    "Rc::new": {
+      "postfix": "rc",
+      "body": "Rc::new(${receiver})",
+      "requires": "std::rc::Rc",
+      "description": "Put the expression into an `Rc`",
+      "scope": "expr",
+    },
+    "Box::pin": {
+      "postfix": "pinbox",
+      "body": "Box::pin(${receiver})",
+      "requires": "std::boxed::Box",
+      "description": "Put the expression into a pinned `Box`",
+      "scope": "expr",
+    },
+    "Ok": {
+      "postfix": "ok",
+      "body": "Ok(${receiver})",
+      "description": "Wrap the expression in a `Result::Ok`",
+      "scope": "expr",
+    },
+    "Err": {
+      "postfix": "err",
+      "body": "Err(${receiver})",
+      "description": "Wrap the expression in a `Result::Err`",
+      "scope": "expr",
+    },
+    "Some": {
+      "postfix": "some",
+      "body": "Some(${receiver})",
+      "description": "Wrap the expression in an `Option::Some`",
+      "scope": "expr",
+    },
+    "String::from": {
+      "postfix": "sf",
+      "body": "String::from(${receiver})",
+      "description": "Wrap the expression in an `String::from`",
+      "scope": "expr",
+    },
+    "Result<_, Box<dyn Error>>": {
+      "postfix": "result_box_dyn_error",
+      "body": "Result<${receiver}, Box<dyn Error>>",
+      "description": "Wrap the expression in an `Result<_, Box<dyn Error>>`",
+      "requires": "std::error::Error",
+      "scope": "expr",
+    },
+  },
+
+  //----------//
+  // Terminal //
+  //----------//
+
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.fontFamily": "Consolas, monospace",
+
+  //------------//
+  // Hex Editor //
+  //------------//
+
+  "hexeditor.columnWidth": 32,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+
+  //---------------//
+  // File Explorer //
+  //---------------//
+
+  "files.trimTrailingWhitespace": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "Cargo.toml": "Cargo.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*",
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+  "git.openRepositoryInParentFolders": "never",
+
+  //----------------//
+  // Symbol Outline //
+  //----------------//
+
+  "outline.showVariables": false,
+  "outline.showFields": false,
+  "outline.showEnumMembers": false,
+
+  //-------//
+  // Other //
+  //-------//
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "chat.disableAIFeatures": true,
+  "workbench.colorTheme": "Dark 2026",
+}

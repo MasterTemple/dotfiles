@@ -1,0 +1,69 @@
+--[[
+# See https://wiki.hyprland.org/Configuring/Monitors/
+
+# Change to 1 if on a 1x display (then change last "auto" to 1 in monitor=)
+# Change to something like 1.75 for fractional scaling (can work well with 1.66667 monitor scaling)
+# Note: You must relaunch Hyprland after changing any env like this (use Super+Esc, then Relaunch)
+env = GDK_SCALE,1
+
+# Use single default monitor (see all monitors with: hyprctl monitors)
+# Format: monitor = [port], resolution, position, scale
+monitor=,preferred,auto,1
+
+# this lets me disable laptop monitor when plugged in
+# hyprctl keyword monitor "eDP-1, disable"
+
+bind = SUPER CONTROL, T, exec, bash -c "source .local/share/omarchy/scripts/toggle_laptop_monitor.sh"
+
+source = ~/.local/share/mastertemple/hypr/monitor_setups/1.conf
+# source = ~/.local/share/mastertemple/hypr/monitor_setups/2.conf
+# source = ~/.local/share/mastertemple/hypr/monitor_setups/3.conf
+# source = ~/.local/share/mastertemple/hypr/monitor_setups/active.conf
+
+bind = SUPER CONTROL SHIFT, L, exec, ~/.local/share/mastertemple/scripts/cycle_window_right.sh
+bind = SUPER CONTROL SHIFT, H, exec, ~/.local/share/mastertemple/scripts/cycle_window_left.sh
+
+
+# bind = SUPER, M, exec, $HOME/.local/share/mastertemple/scripts/monitor_switcher.sh
+]]
+--
+
+-- See https://wiki.hyprland.org/Configuring/Monitors/
+
+-- Change to 1 if on a 1x display (then change last "auto" to 1 in monitor=)
+-- Change to something like 1.75 for fractional scaling (can work well with 1.66667 monitor scaling)
+-- Note: You must relaunch Hyprland after changing any env like this (use Super+Esc, then Relaunch)
+hl.env("GDK_SCALE", "1")
+
+-- Use single default monitor (see all monitors with: hyprctl monitors)
+-- Format: monitor = [port], resolution, position, scale
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = "1",
+})
+
+-- this lets me disable laptop monitor when plugged in
+-- hyprctl keyword monitor "eDP-1, disable"
+
+-- bind = SUPER CONTROL, T, exec, bash -c "source .local/share/omarchy/scripts/toggle_laptop_monitor.sh"
+hl.bind("SUPER + CONTROL + T", hl.exec_cmd(".local/share/omarchy/scripts/toggle_laptop_monitor.sh"))
+
+-- TODO: convert these setups
+-- source = ~/.local/share/mastertemple/hypr/monitor_setups/1.conf
+hl.monitor({
+	output = "eDP-2",
+	mode = "preferred",
+	position = "auto",
+	scale = "1",
+})
+-- TODO: convert these setups
+-- source = ~/.local/share/mastertemple/hypr/monitor_setups/2.conf
+-- source = ~/.local/share/mastertemple/hypr/monitor_setups/3.conf
+-- source = ~/.local/share/mastertemple/hypr/monitor_setups/active.conf
+
+hl.bind("SUPER + CONTROL + SHIFT + L", hl.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_right.sh"))
+hl.bind("SUPER + CONTROL + SHIFT + H", hl.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_left.sh"))
+
+-- bind = SUPER, M, exec, $HOME/.local/share/mastertemple/scripts/monitor_switcher.sh

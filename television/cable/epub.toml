@@ -1,10 +1,11 @@
 [metadata]
-name = "media"
-description = "A channel to select media"
+name = "epub"
+description = "A channel to select EPUB files"
 requirements = ["fd", "bat"]
 
 [source]
-command = ["fd -t f -t l -e mov -e mp4 -e m4a -e mp3 -e wav -e aac -e opus -e webm -H -I"]
+# command = ["fd -t f -e pdf", "fd -t f -e -H"]
+command = ["fd -t f -t l -e epub -H -I"]
 
 [preview]
 command = "bat -n --color=always '{}'"

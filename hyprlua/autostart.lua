@@ -1,3 +1,23 @@
+hl.on("hyprland.start", function()
+	hl.exec_cmd("dropbox-cli start")
+
+	-- Stores only text data
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	-- Stores only image data
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("hypridle")
+	hl.exec_cmd("mako")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("swaybg -i ~/.config/omarchy/current/background -m fill")
+	hl.exec_cmd("swayosd-server")
+	hl.exec_cmd("walker --gapplication-service")
+	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+	hl.exec_cmd("wl-clip-persist --clipboard regular --all-mime-type-regex '^(?!x-kde-passwordManagerHint).+'")
+
+	hl.exec_cmd("[workspace 1] alacritty -e tmux")
+end)
+
+--[[
 # Extra autostart processes
 exec-once = dropbox-cli start
 
@@ -20,3 +40,5 @@ exec-once = [workspace 1] uwsm app -- alacritty -e tmux
 # exec-once = [silent] uwsm app -- obsidian
 # obsidian vault="Dropbox Library"
 
+]]
+--

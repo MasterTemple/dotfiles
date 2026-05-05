@@ -25,6 +25,12 @@ highlight CursorLineNr cterm=bold gui=bold ctermfg=red guifg=red
 " use system clipboard by default
 set clipboard=unnamed
 
+“ move between panes
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
 " qf next/prev
 nnoremap <A-n> :cnext<CR>zz
 nnoremap <A-p> :cprev<CR>zz

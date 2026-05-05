@@ -60,3 +60,10 @@ export PATH=".:$PATH"
 # tmux source ~/.config/tmux/tmux.conf
 # 
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-30/wasi-sdk-30.0-x86_64-linux.tar.gz
+# tar -xzf wasi-sdk-30.0-x86_64-linux.tar.gz -C $HOME
+export WASI_SDK_PATH=$HOME/wasi-sdk-30.0
+# 2️⃣ Add the WASI clang to PATH
+export PATH=$WASI_SDK_PATH/bin:$PATH

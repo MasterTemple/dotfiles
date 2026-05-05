@@ -126,3 +126,44 @@ menu:
       - key: "o"
         desc: OCR
         cmd: sleep 0.25s; ~/.local/share/mastertemple/scripts/ocr.sh
+
+  - key: "t"
+    desc: "Theme"
+    submenu:
+      - key: "n"
+        desc: "[N]ext Background"
+        cmd: ~/.local/share/omarchy/bin/omarchy-theme-bg-next
+
+  - key: "g"
+    desc: Group
+    submenu:
+      - key: "o"
+        desc: Move [O]ut of Group
+        cmd: hyprctl dispatch moveoutofgroup
+      - key: "a"
+        desc: Group [A]dd
+        cmd: hyprctl dispatch groupadd
+      - key: "t"
+        desc: Group [T]oggle
+        cmd: hyprctl dispatch togglegroup
+      - key: "h"
+        desc: Left
+        cmd: hyprctl dispatch changegroupactive b
+      - key: "l"
+        desc: Right
+        cmd: hyprctl dispatch changegroupactive f
+      - key: "i"
+        desc: Move [I]nto Group
+        submenu:
+          - key: "h"
+            desc: Move Left
+            cmd: hyprctl dispatch moveintogroup l
+          - key: "l"
+            desc: Move Right
+            cmd: hyprctl dispatch moveintogroup r
+          - key: "k"
+            desc: Move Up
+            cmd: hyprctl dispatch moveintogroup u
+          - key: "j"
+            desc: Move Down
+            cmd: hyprctl dispatch moveintogroup d

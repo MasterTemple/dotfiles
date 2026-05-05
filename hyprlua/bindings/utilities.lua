@@ -1,0 +1,187 @@
+-- hl.bind()
+
+--[[
+# Menus
+# bindd = SUPER, SPACE, Launch apps, exec, walker -p "Start…"
+bindd = SUPER ALT, SPACE, Run commands, exec, ~/.local/share/omarchy/bin/omarchy-menu
+# bindd = SUPER, ESCAPE, Power menu, exec, ~/.local/share/omarchy/bin/omarchy-menu system
+# bindd = SUPER, K, Show key bindings, exec, ~/.local/share/omarchy/bin/omarchy-menu-keybindings
+
+# Aesthetics
+# bindd = SUPER SHIFT, SPACE, Toggle top bar, exec, pkill -SIGUSR1 waybar
+# bindd = SUPER CTRL, SPACE, Next background in theme, exec, ~/.local/share/omarchy/bin/omarchy-theme-bg-next
+# bindd = SUPER SHIFT CTRL, SPACE, Pick new theme, exec, ~/.local/share/omarchy/bin/omarchy-menu theme
+
+# Notifications
+bindd = SUPER, COMMA, Dismiss last notification, exec, makoctl dismiss
+bindd = SUPER SHIFT, COMMA, Dismiss all notifications, exec, makoctl dismiss --all
+bindd = SUPER CTRL, COMMA, Toggle silencing notifications, exec, makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications"
+
+# Toggle idling
+# bindd = SUPER CTRL, I, Toggle locking on idle, exec, ~/.local/share/omarchy/bin/omarchy-toggle-idle
+
+# Toggle nightlight
+# bindd = SUPER CTRL, N, Toggle nightlight, exec, ~/.local/share/omarchy/bin/omarchy-toggle-nightlight
+
+# Control Apple Display brightness
+# bindd = CTRL, F1, Apple Display brightness down, exec, ~/.local/share/omarchy/bin/omarchy-cmd-apple-display-brightness -5000
+# bindd = CTRL, F2, Apple Display brightness up, exec, ~/.local/share/omarchy/bin/omarchy-cmd-apple-display-brightness +5000
+# bindd = SHIFT CTRL, F2, Apple Display full brightness, exec, ~/.local/share/omarchy/bin/omarchy-cmd-apple-display-brightness +60000
+
+# Screenshots
+bindd = , PRINT, Screenshot of region, exec, ~/.local/share/omarchy/bin/omarchy-cmd-screenshot
+bindd = SHIFT, PRINT, Screenshot of window, exec, ~/.local/share/omarchy/bin/omarchy-cmd-screenshot window
+bindd = CTRL, PRINT, Screenshot of display, exec, ~/.local/share/omarchy/bin/omarchy-cmd-screenshot output
+bindd = SUPER SHIFT, o, OCR of region, exec, ~/.local/share/mastertemple/scripts/ocr.sh
+
+# Screen recordings
+# bindd = ALT, PRINT, Screen record a region, exec, ~/.local/share/omarchy/bin/omarchy-cmd-screenrecord
+# bindd = CTRL ALT, PRINT, Screen record display, exec, ~/.local/share/omarchy/bin/omarchy-cmd-screenrecord output
+
+# Color picker
+bindd = SUPER, PRINT, Color picker, exec, pkill hyprpicker || hyprpicker -a
+
+
+# Launching
+# bind = SUPER, semicolon, exec, pkill wofi || wofi --show drun # -O alphabetical
+bind = SUPER, semicolon, exec, walker -p "Select Application"
+bind = SUPER, slash, exec, ~/.local/share/omarchy/bin/omarchy-menu
+bind = SUPER SHIFT, slash, exec, pkill wofi || ~/.local/share/omarchy/bin/omarchy-menu-keybindings
+
+# Aesthetics
+# bind = SUPER SHIFT, SPACE, exec, pkill -SIGUSR1 waybar
+# bind = SUPER CTRL, SPACE, exec, ~/.local/share/omarchy/bin/omarchy-theme-bg-next
+# bind = SUPER SHIFT CTRL, SPACE, exec, pkill wofi || ~/.local/share/omarchy/bin/omarchy-theme-menu
+
+# Notifications
+# bind = SUPER, comma, exec, makoctl dismiss
+# bind = SUPER SHIFT, comma, exec, makoctl dismiss --all
+# bind = SUPER CTRL, comma, exec, makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications"
+
+# Power menu controls lock, suspend, relaunch, restart, shutdown
+# bind = SUPER, ESCAPE, exec, pkill wofi || ~/.local/share/omarchy/bin/omarchy-menu-power
+bindd = SUPER, ESCAPE, Power menu, exec, ~/.local/share/omarchy/bin/omarchy-menu system
+
+# Toggle idling
+bind = SUPER CTRL, I, exec, ~/.local/share/omarchy/bin/omarchy-toggle-idle
+
+# Control Apple Display brightness
+bind = CTRL, F1, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness -5000
+bind = CTRL, F2, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness +5000
+bind = SHIFT CTRL, F2, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness +60000
+
+# # Screenshots
+# bind = , PRINT, exec, hyprshot -m region
+# bind = SHIFT, PRINT, exec, hyprshot -m window
+# bind = CTRL, PRINT, exec, hyprshot -m output
+
+# # Color picker
+# bind = SUPER, PRINT, exec, hyprpicker -a
+
+# bind = SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
+bind = SUPER, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy
+
+# Submap keybinds
+# $sm-reset = hyprctl dispatch submap reset
+#
+# $sm-msg = (D)iscord (T)elegram (S)ignal
+# submap=$sm-msg
+# 	bind = , escape, submap, reset
+# 	bind = , D, exec, $sm-reset; uwsm app -- discord
+# 	bind = , T, exec, $sm-reset; uwsm app -- telegram-desktop
+# 	bind = , S, exec, $sm-reset; uwsm app -- signal-desktop
+# submap=reset
+#
+# $sm-player = (P)revious (T)oggle (N)ext
+# submap=$sm-player
+# 	bind = , escape, submap, reset
+# 	bind = , N, exec, $sm-reset; playerctl next
+# 	bind = , P, exec, $sm-reset; playerctl previous
+# 	bind = , T, exec, $sm-reset; playerctl play-pause
+# submap=reset
+#
+# $sm-window-resize = Resizing: HJKL
+# submap=$sm-window-resize
+# 	bind = , escape, submap, reset
+# 	bind = , H, resizeactive, -100 0
+# 	bind = , L, resizeactive, 100 0
+# 	bind = , K, resizeactive, 0 -100
+# 	bind = , J, resizeactive, 0 100
+# submap=reset
+#
+# $sm-window = (R)esize (C)enter (F)ullscreen (O)rient
+# submap=$sm-window
+# 	bind = , escape, submap, reset
+#     bind = , R, submap, $sm-window-resize
+#     bind = , C, centerwindow
+#     bind = , F, fullscreen
+#     bind = , O, togglesplit
+# submap=reset
+#
+# # $set_overlay = bash -c "source .local/share/omarchy/scripts/set_overlay.sh '(M)sg (P)layer'"
+#
+# $sm-leader = (M)sg (P)layer (W)indow
+# # bind = SUPER, space, submap, $sm-leader
+# # bind = SUPER, space, exec, hyprctl dispatch submap leader; echo "(M)sg (P)layer" | $set_overlay
+# # bind = SUPER, space, exec, hyprctl dispatch submap leader; $set_overlay "(M)sg (P)layer"
+# bind = SUPER, space, submap, $sm-leader
+# submap=$sm-leader
+#     # bind= , escape , submap, reset
+#     bind= , escape, exec, hyprctl dispatch submap reset; pkill -f "foot-overlay"
+#     bind = , M, submap, $sm-msg
+#     bind = , P, submap, $sm-player
+#     bind = , W, submap, $sm-window
+# submap=reset
+
+bind = SUPER, space, exec, wlr-which-key
+]]
+--
+
+-- Launching & Menus
+hl.bind("SUPER + slash", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-menu"))
+hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd("pkill wofi || ~/.local/share/omarchy/bin/omarchy-menu-keybindings"))
+hl.bind("SUPER + semicolon", hl.dsp.exec_cmd('walker -p "Select Application"'))
+hl.bind("SUPER + ALT + SPACE", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-menu"))
+hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-menu system"))
+
+-- Aesthetics
+-- bindd = SUPER SHIFT, SPACE, Toggle top bar, exec, pkill -SIGUSR1 waybar
+-- bindd = SUPER CTRL, SPACE, Next background in theme, exec, ~/.local/share/omarchy/bin/omarchy-theme-bg-next
+-- bindd = SUPER SHIFT CTRL, SPACE, Pick new theme, exec, ~/.local/share/omarchy/bin/omarchy-menu theme
+
+-- Notifications
+-- bindd = SUPER, COMMA, Dismiss last notification, exec, makoctl dismiss
+-- bindd = SUPER SHIFT, COMMA, Dismiss all notifications, exec, makoctl dismiss --all
+-- bindd = SUPER CTRL, COMMA, Toggle silencing notifications, exec, makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications"
+
+-- Screenshots
+-- Screenshot of region
+hl.bind("PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-cmd-screenshot"))
+-- Screenshot of window
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-cmd-screenshot window"))
+-- Screenshot of display
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-cmd-screenshot output"))
+-- OCR
+hl.bind("SUPER + SHIFT + o", hl.dsp.exec_cmd("~/.local/share/mastertemple/scripts/ocr.sh"))
+-- Color picker
+hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("pkill hyprpicker || hyprpicker -a"))
+
+-- Aesthetics
+-- bind = SUPER SHIFT, SPACE, exec, pkill -SIGUSR1 waybar
+-- bind = SUPER CTRL, SPACE, exec, ~/.local/share/omarchy/bin/omarchy-theme-bg-next
+-- bind = SUPER SHIFT CTRL, SPACE, exec, pkill wofi || ~/.local/share/omarchy/bin/omarchy-theme-menu
+
+-- Notifications
+-- bind = SUPER, comma, exec, makoctl dismiss
+-- bind = SUPER SHIFT, comma, exec, makoctl dismiss --all
+-- bind = SUPER CTRL, comma, exec, makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications"
+
+-- Toggle idling
+-- bind = SUPER CTRL, I, exec, ~/.local/share/omarchy/bin/omarchy-toggle-idle
+
+-- Control Apple Display brightness
+-- bind = CTRL, F1, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness -5000
+-- bind = CTRL, F2, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness +5000
+-- bind = SHIFT CTRL, F2, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness +60000
+--
+-- bind = SUPER, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy

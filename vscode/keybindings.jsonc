@@ -1,0 +1,485 @@
+// Source: https://github.com/MasterTemple/dotfiles/blob/main/vscode/keybindings.jsonc
+// Following some keybindings will be a negative keybind, such as { "command": "-<command>"}, which will unbind the default keybind
+[
+
+	//--------------//
+	// Multi-Cursor //
+	//--------------//
+
+	// ! NOTE: there are commands to focus next/previous cursor
+
+	// insert cursor above
+	{
+		"command": "editor.action.insertCursorAbove",
+		"key": "ctrl+alt+k",
+		"when": "editorTextFocus"
+	},
+	// insert cursor below
+	{
+		"command": "editor.action.insertCursorBelow",
+		"key": "ctrl+alt+j",
+		"when": "editorTextFocus"
+	},
+	// add another cursor at next search match
+	// basically '*' = go to next match, so 'ctrl+*' = 'add cursor to next match'
+	{
+		"key": "ctrl+shift+8",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus",
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus",
+	},
+	// move selected lines down
+	{
+		"command": "editor.action.moveLinesDownAction",
+		"key": "alt+j",
+		"when": "editorTextFocus && vim.mode != 'Insert'"
+	},
+	// move selected lines up
+	{
+		"command": "editor.action.moveLinesUpAction",
+		"key": "alt+k",
+		"when": "editorTextFocus && vim.mode != 'Insert'"
+	},
+
+	//--------------//
+	// Tabs/Windows //
+	//  Navigation  //
+	//--------------//
+
+	{
+		"command": "workbench.action.navigateLeft",
+		"key": "ctrl+h"
+	},
+
+	// move left a window
+	{
+		"command": "workbench.action.navigateLeft",
+		"key": "ctrl+h"
+	},
+	// move down a window
+	{
+		"command": "workbench.action.navigateDown",
+		"key": "ctrl+j"
+	},
+	// move up a window
+	{
+		"command": "workbench.action.navigateUp",
+		"key": "ctrl+k"
+	},
+	// move right a window
+	{
+		"command": "workbench.action.navigateRight",
+		"key": "ctrl+l"
+	},
+	// toggle directory on left side
+	// {
+	// 	"command": "workbench.action.toggleSidebarVisibility",
+	// 	"key": "ctrl+e",
+	// 	"when": "vim.active && vim.mode=='Normal' && editorTextFocus"
+	// },
+	{
+		"command": "runCommands",
+		"key": "ctrl+n",
+		"when": "vim.active && vim.mode == 'Normal' && editorTextFocus",
+		"args": {
+			"commands": ["workbench.action.toggleSidebarVisibility"]
+		}
+	},
+	// toggle info on right side
+	{
+		"command": "workbench.action.toggleAuxiliaryBar",
+		"key": "ctrl+alt+n"
+	},
+	// move window right a group
+	{
+		"command": "workbench.action.moveEditorToRightGroup",
+		"key": "ctrl+alt+l"
+	},
+	// move window left a group
+	{
+		"command": "workbench.action.moveEditorToLeftGroup",
+		"key": "ctrl+alt+h"
+	},
+	// temporarily disabled because it conflicts with multi-cursor command
+	// // move window up a group
+	// {
+	// 	"command": "workbench.action.moveEditorToAboveGroup",
+	// 	"key": "ctrl+alt+k"
+	// },
+	// // temporarily disabled because it conflicts with multi-cursor command
+	// // move window down a group
+	// {
+	// 	"command": "workbench.action.moveEditorToBelowGroup",
+	// 	"key": "ctrl+alt+j"
+	// },
+	// // close all other editors in group
+	// {
+	// 	"command": "workbench.action.closeOtherEditors",
+	// 	"key": "space q o"
+	// },
+	// // close all other editors in group
+	// {
+	// 	"command": "workbench.action.closeEditorsInGroup",
+	// 	"key": "space q a"
+	// },
+	// // decrease view width
+	// {
+	// 	"key": "ctrl+alt+h",
+	// 	"command": "workbench.action.decreaseViewWidth"
+	// },
+	// // increase view width
+	// {
+	// 	"key": "ctrl+alt+l",
+	// 	"command": "workbench.action.increaseViewWidth"
+	// },
+	// // decrease view height
+	// {
+	// 	"key": "ctrl+alt+k",
+	// 	"command": "workbench.action.decreaseViewHeight"
+	// },
+	// // increase view height
+	// {
+	// 	"key": "ctrl+alt+j",
+	// 	"command": "workbench.action.increaseViewHeight"
+	// },
+	// toggle terminal
+	// {
+	// 	"key": "ctrl+i",
+	// 	"command": "workbench.action.terminal.toggleTerminal",
+	// },
+
+	//---------------//
+	// File Explorer //
+	//---------------//
+
+	// rename file
+	{
+		"key": "r",
+		"command": "renameFile",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// copy/yank file
+	{
+		"key": "y",
+		"command": "filesExplorer.copy",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// paste file
+	{
+		"key": "p",
+		"command": "filesExplorer.paste",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// delete file
+	{
+		"key": "d",
+		"command": "filesExplorer.cut",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// add file
+	{
+		"key": "a",
+		"command": "explorer.newFile",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// add directory
+	{
+		"key": "shift+a",
+		"command": "explorer.newFolder",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// open file horizontally
+	{
+		"key": "h",
+		"command": "explorer.openToSide",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	// open file vertically
+	{
+		"key": "v",
+		"command": "runCommands",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+		"args": {
+			"commands": [
+				"workbench.action.splitEditorDown",
+				"explorer.openAndPassFocus",
+				"workbench.action.closeOtherEditors"
+			]
+		}
+	},
+
+	//--------------//
+	// Command Menu //
+	//--------------//
+
+	// find all commands
+	{
+		"key": "space ;",
+		"command": "workbench.action.showCommands",
+		"when": "!editorTextFocus && !inputFocus"
+	},
+	// close select menu with ctrl+c
+	{
+		"key": "ctrl+c",
+		"command": "workbench.action.closeQuickOpen",
+		"when": "inQuickOpen"
+	},
+
+	//---------------//
+	// Search Editor //
+	//---------------//
+
+	// focus search editor input
+	{
+		"key": "space s i",
+		"command": "search.action.focusQueryEditorWidget",
+		"when": "inSearchEditor"
+	},
+	// focus next search result
+	{
+		"key": "alt+n",
+		"command": "search.action.focusNextSearchResult",
+		"when": "inSearchEditor"
+	},
+	// focus prev search result
+	{
+		"key": "alt+p",
+		"command": "search.action.focusPreviousSearchResult",
+		"when": "inSearchEditor"
+	},
+
+	//---------------//
+	// Next/Previous //
+	//---------------//
+
+	// use ctrl+n to select next
+	{
+		"command": "editor.action.scrollDownHover",
+		"key": "ctrl+n",
+		"when": "editorHoverFocused"
+	},
+	{
+		"command": "breadcrumbs.selectFocused",
+		"key": "ctrl+n",
+		"when": "breadcrumbsActive && breadcrumbsVisible"
+	},
+	{
+		"command": "editor.action.selectNextStickyScrollLine",
+		"key": "ctrl+n",
+		"when": "stickyScrollFocused"
+	},
+	{
+		"command": "focusNextRenameSuggestion",
+		"key": "ctrl+n",
+		"when": "renameInputVisible"
+	},
+	{
+		"command": "history.showNext",
+		"key": "ctrl+n",
+		"when": "historyNavigationForwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+	},
+	{
+		"command": "iconSelectBox.focusDown",
+		"key": "ctrl+n",
+		"when": "iconSelectBoxFocus"
+	},
+	{
+		"command": "interactive.history.next",
+		"key": "ctrl+n",
+		"when": "!suggestWidgetVisible && activeEditor == 'workbench.editor.interactive' && interactiveInputCursorAtBoundary != 'none' && interactiveInputCursorAtBoundary != 'top'"
+	},
+	{
+		"command": "interactive.history.next",
+		"key": "ctrl+n",
+		"when": "!suggestWidgetVisible && activeEditor == 'workbench.editor.repl' && interactiveInputCursorAtBoundary != 'none' && interactiveInputCursorAtBoundary != 'top'"
+	},
+	{
+		"command": "list.focusDown",
+		"key": "ctrl+n",
+		"when": "listFocus && !inputFocus && !treestickyScrollFocused"
+	},
+	{
+		"command": "notebook.cell.chat.nextFromHistory",
+		"key": "ctrl+n",
+		"when": "inlineChatFocused && notebookCellChatFocused"
+	},
+	{
+		"command": "notifications.focusNextToast",
+		"key": "ctrl+n",
+		"when": "notificationFocus && notificationToastsVisible"
+	},
+	{
+		"command": "quickInput.next",
+		"key": "ctrl+n",
+		"when": "inQuickInput && quickInputType == 'quickPick'"
+	},
+	{
+		"command": "scm.viewNextCommit",
+		"key": "ctrl+n",
+		"when": "scmInputIsInLastPosition && scmRepository && !suggestWidgetVisible"
+	},
+	{
+		"command": "selectNextCodeAction",
+		"key": "ctrl+n",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"command": "selectNextSuggestion",
+		"key": "ctrl+n",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+	},
+	{
+		"command": "settings.action.focusSettingsFile",
+		"key": "ctrl+n",
+		"when": "inSettingsSearch && !suggestWidgetVisible"
+	},
+	{
+		"command": "settings.action.focusSettingsFromSearch",
+		"key": "ctrl+n",
+		"when": "inSettingsSearch && !suggestWidgetVisible"
+	},
+	// I think this is the type parameter hint that also appears when trying to select an auto-complete option and consumes my selection input
+	// {
+	// 	"command": "showNextParameterHint",
+	// 	"key": "ctrl+n",
+	// 	"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	// },
+	{
+		"command": "workbench.action.interactivePlayground.arrowDown",
+		"key": "ctrl+n",
+		"when": "interactivePlaygroundFocus && !editorTextFocus"
+	},
+	{
+		"command": "workbench.action.terminal.selectNextSuggestion",
+		"key": "ctrl+n",
+		"when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+	},
+	{
+		"command": "workbench.banner.focusNextAction",
+		"key": "ctrl+n",
+		"when": "bannerFocused"
+	},
+	{
+		"command": "workbench.statusBar.focusNext",
+		"key": "ctrl+n",
+		"when": "statusBarFocused"
+	},
+
+	// use ctrl+p to select previous
+	{
+		"command": "notebook.focusPreviousEditor",
+		"key": "ctrl+p",
+		"when": "config.notebook.navigation.allowNavigateToSurroundingCells && editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'"
+	},
+	{
+		"command": "notebook.focusPreviousEditor",
+		"key": "ctrl+p",
+		"when": "config.notebook.navigation.allowNavigateToSurroundingCells && notebookCursorNavigationMode && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && !notebookCellMarkdownEditMode && notebookCellType == 'markup'"
+	},
+	{
+		"command": "editor.action.scrollUpHover",
+		"key": "ctrl+p",
+		"when": "editorHoverFocused"
+	},
+	{
+		"command": "workbench.action.terminal.chat.previousFromHistory",
+		"key": "ctrl+p",
+		"when": "terminalChatFocus"
+	},
+	{
+		"command": "editor.action.selectPreviousStickyScrollLine",
+		"key": "ctrl+p",
+		"when": "stickyScrollFocused"
+	},
+	{
+		"command": "focusPreviousRenameSuggestion",
+		"key": "ctrl+p",
+		"when": "renameInputVisible"
+	},
+	{
+		"command": "history.showPrevious",
+		"key": "ctrl+p",
+		"when": "historyNavigationBackwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+	},
+	{
+		"command": "iconSelectBox.focusUp",
+		"key": "ctrl+p",
+		"when": "iconSelectBoxFocus"
+	},
+	{
+		"command": "interactive.history.previous",
+		"key": "ctrl+p",
+		"when": "!suggestWidgetVisible && activeEditor == 'workbench.editor.interactive' && interactiveInputCursorAtBoundary != 'bottom' && interactiveInputCursorAtBoundary != 'none'"
+	},
+	{
+		"command": "interactive.history.previous",
+		"key": "ctrl+p",
+		"when": "!suggestWidgetVisible && activeEditor == 'workbench.editor.repl' && interactiveInputCursorAtBoundary != 'bottom' && interactiveInputCursorAtBoundary != 'none'"
+	},
+	{
+		"command": "list.focusUp",
+		"key": "ctrl+p",
+		"when": "listFocus && !inputFocus && !treestickyScrollFocused"
+	},
+	{
+		"command": "notebook.cell.chat.previousFromHistory",
+		"key": "ctrl+p",
+		"when": "inlineChatFocused && notebookCellChatFocused"
+	},
+	{
+		"command": "notifications.focusPreviousToast",
+		"key": "ctrl+p",
+		"when": "notificationFocus && notificationToastsVisible"
+	},
+	{
+		"command": "quickInput.previous",
+		"key": "ctrl+p",
+		"when": "inQuickInput && quickInputType == 'quickPick'"
+	},
+	{
+		"command": "scm.viewPreviousCommit",
+		"key": "ctrl+p",
+		"when": "scmInputIsInFirstPosition && scmRepository && !suggestWidgetVisible"
+	},
+	{
+		"command": "selectPrevCodeAction",
+		"key": "ctrl+p",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"command": "selectPrevSuggestion",
+		"key": "ctrl+p",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+	},
+	// I think this is the type parameter hint that also appears when trying to select an auto-complete option and consumes my selection input
+	// {
+	// 	"command": "showPrevParameterHint",
+	// 	"key": "ctrl+p",
+	// 	"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	// },
+	{
+		"command": "workbench.action.interactivePlayground.arrowUp",
+		"key": "ctrl+p",
+		"when": "interactivePlaygroundFocus && !editorTextFocus"
+	},
+	{
+		"command": "workbench.action.terminal.selectPrevSuggestion",
+		"key": "ctrl+p",
+		"when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+	},
+	{
+		"command": "workbench.banner.focusPreviousAction",
+		"key": "ctrl+p",
+		"when": "bannerFocused"
+	},
+	{
+		"command": "workbench.statusBar.focusPrevious",
+		"key": "ctrl+p",
+		"when": "statusBarFocused"
+	},
+
+]

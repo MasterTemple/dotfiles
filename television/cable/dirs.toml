@@ -5,7 +5,8 @@ requirements = ["fd"]
 
 [source]
 command = [
-	"fd -t d",
+	"fd -t d --ignore-file /home/dgmastertemple/Dropbox/Development/dotfiles/television/ignores/dirs.txt",
+
 	# "fd -t d --hidden"
 ]
 

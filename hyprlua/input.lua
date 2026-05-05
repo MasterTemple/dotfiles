@@ -1,0 +1,90 @@
+--[[
+# Control your input devices
+# See https://wiki.hypr.land/Configuring/Variables/#input
+input {
+  # Use multiple keyboard layouts and switch between them with Alt + Space
+  # kb_layout = us,dk
+  # kb_options = compose:caps,grp:alt_space_toggle
+  kb_options = ctrl:nocaps
+
+  follow_mouse = 1
+
+  # Change speed of keyboard repeat
+  repeat_rate = 40
+  repeat_delay = 600
+
+  # Increase sensitity for mouse/trackpack (default: 0)
+  # sensitivity = 0.35
+
+  touchpad {
+    # Use natural (inverse) scrolling
+    natural_scroll = true
+
+    # Use two-finger clicks for right-click instead of lower-right corner
+    # clickfinger_behavior = true
+
+    # Control the speed of your scrolling
+    scroll_factor = 0.4
+  }
+
+  # scroll_method = on_button_down
+  scroll_button = 0
+}
+
+# Scroll faster in the terminal
+windowrule = scroll_touchpad 1.5, match:class Alacritty
+
+# https://wiki.hyprland.org/Configuring/Variables/#gestures
+gestures {
+    # workspace_swipe = true
+	# workspace_swipe_touch = true
+}
+]]
+--
+
+-- Control your input devices
+-- See https://wiki.hypr.land/Configuring/Variables/#input
+hl.config({
+	input({
+		-- Use multiple keyboard layouts and switch between them with Alt + Space
+		-- kb_layout = us,dk
+		-- kb_options = compose:caps,grp:alt_space_toggle
+		kb_options = "ctrl:nocaps",
+
+		follow_mouse = 1,
+
+		-- Change speed of keyboard repeat
+		repeat_rate = 40,
+		repeat_delay = 600,
+
+		-- Increase sensitity for mouse/trackpack (default: 0)
+		-- sensitivity = 0.35,
+
+		touchpad({
+			-- Use natural (inverse) scrolling
+			natural_scroll = true,
+
+			-- Use two-finger clicks for right-click instead of lower-right corner
+			-- clickfinger_behavior = true,
+
+			-- Control the speed of your scrolling
+			scroll_factor = 0.4,
+		}),
+
+		-- scroll_method = on_button_down
+		scroll_button = 0,
+	}),
+
+	-- https://wiki.hyprland.org/Configuring/Variables/#gestures
+	gestures({
+		-- workspace_swipe = true
+		-- workspace_swipe_touch = true
+	}),
+})
+
+hl.window_rule({
+	-- Scroll faster in the terminal
+	name = "Scroll faster in the terminal",
+	match = { class = "Alacritty" },
+	scroll_touchpad = 1.5,
+})

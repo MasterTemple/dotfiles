@@ -1,3 +1,4 @@
+--[[
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 windowrule = suppress_event maximize, match:class .*
 # windowrule = match:class .*, suppressevent maximize
@@ -62,3 +63,93 @@ windowrule = move (monitor_w*0.4) (monitor_h*0.9), match:title Floating Window -
 windowrule = no_focus on, match:title Floating Window - Show Me The Key
 windowrule = size (monitor_w*0.2) (monitor_h*0.05), match:title Floating Window - Show Me The Key
 windowrule = pin on, match:title Floating Window - Show Me The Key
+]]
+--
+
+-- See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+hl.window_rule({
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
+	suppress_event = "maximize",
+})
+
+-- Just dash of opacity by default
+hl.window_rule({
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
+	opacity = "0.97 0.9",
+})
+
+-- Fix some dragging issues with XWayland
+hl.window_rule({
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
+
+	no_focus = true,
+})
+
+-- windowrule = workspace 3, match:class obsidian
+hl.window_rule({
+	match = {
+		class = "obsidian",
+	},
+	workspace = "3",
+})
+-- windowrule = group set always, match:class obsidian
+hl.window_rule({
+	match = {
+		class = "obsidian",
+	},
+	group = "set always",
+})
+
+-- https://wiki.hypr.land/Configuring/Window-Rules/#tags
+-- windowrule = tag +msg, match:class .*(discord|signal|telegram).*
+hl.window_rule({
+	match = {
+		class = ".*(discord|signal|telegram).*",
+	},
+	tag = "+msg",
+})
+-- windowrule = workspace 4, match:tag msg
+-- windowrule = group set always, match:tag msg
+hl.window_rule({
+	match = {
+		tag = "msg",
+	},
+	workspace = "4",
+	group = "set always",
+})
+
+-- windowrule = workspace 5, match:class spotify
+hl.window_rule({
+	match = {
+		class = "spotify",
+	},
+	workspace = "5",
+})
+
+-- windowrule = float on, match:title Floating Window - Show Me The Key
+-- windowrule = center on, match:title Floating Window - Show Me The Key
+-- windowrule = move (monitor_w*0.4) (monitor_h*0.9), match:title Floating Window - Show Me The Key
+-- windowrule = no_focus on, match:title Floating Window - Show Me The Key
+-- windowrule = size (monitor_w*0.2) (monitor_h*0.05), match:title Floating Window - Show Me The Key
+-- windowrule = pin on, match:title Floating Window - Show Me The Key
+hl.window_rule({
+	match = {
+		title = "Floating Window - Show Me The Key",
+	},
+	float = true,
+	center = true,
+	move = { "monitor_w*0.4", "monitor_h*0.9" },
+	no_focus = true,
+	size = { "monitor_w*0.2", "monitor_h*0.05" },
+	pin = true,
+})
