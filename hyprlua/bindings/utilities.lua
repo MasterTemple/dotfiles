@@ -156,7 +156,7 @@ hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-me
 
 -- Screenshots
 -- Screenshot of region
-hl.bind("PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-cmd-screenshot"))
+hl.bind("PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-capture-screenshot"))
 -- Screenshot of window
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-cmd-screenshot window"))
 -- Screenshot of display
