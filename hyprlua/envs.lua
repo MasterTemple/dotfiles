@@ -50,9 +50,9 @@ hl.env("OZONE_PLATFORM", "wayland")
 
 -- unscale XWayland
 hl.config({
-	xwayland({
+	xwayland = {
 		force_zero_scaling = true,
-	}),
+	},
 })
 
 -- Use XCompose file
@@ -60,7 +60,7 @@ hl.env("XCOMPOSEFILE", "~/.XCompose")
 
 hl.config({
 	-- Don't show update on first launch
-	ecosystem({
+	ecosystem = {
 		no_update_news = true,
-	}),
+	},
 })

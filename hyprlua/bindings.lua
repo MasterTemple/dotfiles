@@ -29,6 +29,8 @@ source = ~/.local/share/mastertemple/hypr/bindings/utilities.conf
 --
 
 local terminal = "alacritty"
+
+-- $terminal = uwsm app -- alacritty
 local browser = "brave --new-window --ozone-platform=wayland"
 local webapp = browser .. " --app"
 
@@ -50,6 +52,10 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(terminal .. " -e nvim"), { float = tr
 -- hl.bind(mainMod .. " + TAB", hl.dsp.focus({ }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(terminal .. " -e btop"))
 
-require("~/.local/share/mastertemple/hyprlua/bindings/media.lua")
-require("~/.local/share/mastertemple/hyprlua/bindings/tiling.lua")
-require("~/.local/share/mastertemple/hyprlua/bindings/utilities.lua")
+-- require("~/.local/share/mastertemple/hyprlua/bindings/media.lua")
+-- require("~/.local/share/mastertemple/hyprlua/bindings/tiling.lua")
+-- require("~/.local/share/mastertemple/hyprlua/bindings/utilities.lua")
+
+require("hyprlua.bindings.media")
+require("hyprlua.bindings.tiling")
+require("hyprlua.bindings.utilities")

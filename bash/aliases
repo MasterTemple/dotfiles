@@ -44,7 +44,16 @@ alias cagro="cargo"
 alias carog="cargo"
 
 
-alias kv='NVIM_APPNAME="nvim-kickstart" nvim'
+# alias kv='NVIM_APPNAME="nvim-kickstart" nvim'
+alias kv='NVIM_APPNAME="nvim-kickstart" nvim -u /home/dgmastertemple/Documents/GitHub/kickstart.nvim/init.lua'
+alias kv="/usr/bin/nvim  -u /home/dgmastertemple/Documents/GitHub/kickstart.nvim/init.lua"
+
+# alias nv="/usr/bin/nvim  -u /home/dgmastertemple/Downloads/nvim-refactored/init.lua"
+# alias nv="/usr/bin/nvim  -u /home/dgmastertemple/Downloads/nvim-refactored-2/nvim/init.lua"
+# alias nv="/usr/bin/nvim  -u /home/dgmastertemple/Development/lua/new-nvim-config/init.lua"
+alias nv="/usr/bin/nvim  -u /home/dgmastertemple/github/nvim-config/init.lua"
+alias nvi="neovide --neovim-bin /usr/bin/nvim -- -u /home/dgmastertemple/github/nvim-config/init.lua"
+
 
 # raw nvim
 alias rv='NVIM_APPNAME="raw" nvim'
@@ -88,7 +97,7 @@ alias h="hide"
 
 alias vimw='nvim ~/vimwiki/index.md'
 alias vw='nvim ~/vimwiki/index.md'
-alias nv="nvim ~/.config/nvim/init.lua -c \":Telescope find_files<CR>\""
+# alias nv="nvim ~/.config/nvim/init.lua -c \":Telescope find_files<CR>\""
 alias tmsr='tmux source ~/.config/tmux/tmux.conf'
 # alias verse="~/Development/python/verses/verse"
 alias gogh='bash -c "$(wget -qO- https://git.io/vQgMr)"' # 34 35 36 37 53 62 102 126 148 149

@@ -45,7 +45,7 @@ gestures {
 -- Control your input devices
 -- See https://wiki.hypr.land/Configuring/Variables/#input
 hl.config({
-	input({
+	input = {
 		-- Use multiple keyboard layouts and switch between them with Alt + Space
 		-- kb_layout = us,dk
 		-- kb_options = compose:caps,grp:alt_space_toggle
@@ -60,7 +60,7 @@ hl.config({
 		-- Increase sensitity for mouse/trackpack (default: 0)
 		-- sensitivity = 0.35,
 
-		touchpad({
+		touchpad = {
 			-- Use natural (inverse) scrolling
 			natural_scroll = true,
 
@@ -69,17 +69,17 @@ hl.config({
 
 			-- Control the speed of your scrolling
 			scroll_factor = 0.4,
-		}),
+		},
 
 		-- scroll_method = on_button_down
 		scroll_button = 0,
-	}),
+	},
 
 	-- https://wiki.hyprland.org/Configuring/Variables/#gestures
-	gestures({
+	gestures = {
 		-- workspace_swipe = true
 		-- workspace_swipe_touch = true
-	}),
+	},
 })
 
 hl.window_rule({

@@ -48,7 +48,7 @@ hl.monitor({
 -- hyprctl keyword monitor "eDP-1, disable"
 
 -- bind = SUPER CONTROL, T, exec, bash -c "source .local/share/omarchy/scripts/toggle_laptop_monitor.sh"
-hl.bind("SUPER + CONTROL + T", hl.exec_cmd(".local/share/omarchy/scripts/toggle_laptop_monitor.sh"))
+hl.bind("SUPER + CONTROL + T", hl.dsp.exec_cmd(".local/share/omarchy/scripts/toggle_laptop_monitor.sh"))
 
 -- TODO: convert these setups
 -- source = ~/.local/share/mastertemple/hypr/monitor_setups/1.conf
@@ -63,7 +63,7 @@ hl.monitor({
 -- source = ~/.local/share/mastertemple/hypr/monitor_setups/3.conf
 -- source = ~/.local/share/mastertemple/hypr/monitor_setups/active.conf
 
-hl.bind("SUPER + CONTROL + SHIFT + L", hl.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_right.sh"))
-hl.bind("SUPER + CONTROL + SHIFT + H", hl.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_left.sh"))
+hl.bind("SUPER + CONTROL + SHIFT + L", hl.dsp.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_right.sh"))
+hl.bind("SUPER + CONTROL + SHIFT + H", hl.dsp.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_left.sh"))
 
 -- bind = SUPER, M, exec, $HOME/.local/share/mastertemple/scripts/monitor_switcher.sh

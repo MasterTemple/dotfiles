@@ -154,13 +154,13 @@ for i, entry in ipairs(directions) do
 	local arrow = entry.arrow
 	-- Move focus
 	-- TODO: bind = SUPER, H, movefocus, l
-	hl.bind("SUPER + " .. arrow, hl.dsp.focus({ direction }))
-	hl.bind("SUPER + " .. key, hl.dsp.focus({ direction }))
+	hl.bind("SUPER + " .. arrow, hl.dsp.focus({ direction = direction }))
+	hl.bind("SUPER + " .. key, hl.dsp.focus({ direction = direction }))
 
 	-- Swap active window with the one next to it
 	-- TODO: bind = SUPER SHIFT, H, swapwindow, l
-	hl.bind("SUPER + SHIFT + " .. arrow, hl.dsp.window.swap({ direction }))
-	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.swap({ direction }))
+	hl.bind("SUPER + SHIFT + " .. arrow, hl.dsp.window.swap({ direction = direction }))
+	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.swap({ direction = direction }))
 
 	-- Focus monitor in direction
 	-- TODO: bind = SUPER CONTROL, H, focusmonitor, l
@@ -169,15 +169,15 @@ for i, entry in ipairs(directions) do
 
 	-- Move window to monitor
 	-- TODO: bind = SUPER CONTROL SHIFT, H, movewindow, mon:l
-	hl.bind("SUPER + CONTROL + SHIFT + " .. direction, hl.dsp.window.move({ direction }))
-	hl.bind("SUPER + CONTROL + SHIFT + " .. key, hl.dsp.window.move({ direction }))
+	hl.bind("SUPER + CONTROL + SHIFT + " .. direction, hl.dsp.window.move({ direction = direction }))
+	hl.bind("SUPER + CONTROL + SHIFT + " .. key, hl.dsp.window.move({ direction = direction }))
 end
 
 -- Resize active window
 hl.bind("SUPER + minus", hl.dsp.window.resize({ x = -100, y = 0 }))
-hl.bind("SUPER + eqal", hl.dsp.window.resize({ x = 100, y = 0 }))
+hl.bind("SUPER + equal", hl.dsp.window.resize({ x = 100, y = 0 }))
 hl.bind("SUPER + SHIFT + minus", hl.dsp.window.resize({ x = 0, y = -100 }))
-hl.bind("SUPER + SHIFT + eqal", hl.dsp.window.resize({ x = 0, y = 100 }))
+hl.bind("SUPER + SHIFT + equal", hl.dsp.window.resize({ x = 0, y = 100 }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

@@ -174,7 +174,7 @@ hl.config({
 
 	-- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
 	dwindle = {
-		pseudotile = true, -- Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+		-- pseudotile = true, -- Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
 		preserve_split = true, -- You probably want this
 		force_split = 2, -- Always split on the right
 	},
@@ -194,10 +194,10 @@ hl.config({
 	},
 
 	group = {
-		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
-		},
+		-- col = {
+		-- 	active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+		-- 	inactive_border = "rgba(595959aa)",
+		-- },
 		groupbar = {
 			font_family = "JetBrainsMono Nerd Font",
 			height = 16,
