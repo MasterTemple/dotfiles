@@ -140,6 +140,7 @@ menu:
       - key: "o"
         desc: Move [O]ut of Group
         cmd: hyprctl dispatch moveoutofgroup
+        # cmd: hyprctl dispatch "hl.dsp.move({ out_of_group = true})"
       - key: "a"
         desc: Group [A]dd
         cmd: hyprctl dispatch groupadd

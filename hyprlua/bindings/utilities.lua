@@ -149,8 +149,7 @@ hl.bind("SUPER + ESCAPE", hl.dsp.exec_cmd("~/.local/share/omarchy/bin/omarchy-me
 -- bindd = SUPER CTRL, SPACE, Next background in theme, exec, ~/.local/share/omarchy/bin/omarchy-theme-bg-next
 -- bindd = SUPER SHIFT CTRL, SPACE, Pick new theme, exec, ~/.local/share/omarchy/bin/omarchy-menu theme
 
--- Notifications
--- bindd = SUPER, COMMA, Dismiss last notification, exec, makoctl dismiss
+-- Notifications bindd = SUPER, COMMA, Dismiss last notification, exec, makoctl dismiss
 -- bindd = SUPER SHIFT, COMMA, Dismiss all notifications, exec, makoctl dismiss --all
 -- bindd = SUPER CTRL, COMMA, Toggle silencing notifications, exec, makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications"
 
@@ -185,3 +184,5 @@ hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("pkill hyprpicker || hyprpicker -a"))
 -- bind = SHIFT CTRL, F2, exec, ~/.local/share/omarchy/bin/omarchy-apple-display-brightness +60000
 --
 -- bind = SUPER, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy
+
+hl.bind("SUPER + Space", hl.dsp.exec_cmd("wlr-which-key"))

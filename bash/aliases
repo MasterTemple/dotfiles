@@ -52,6 +52,7 @@ alias kv="/usr/bin/nvim  -u /home/dgmastertemple/Documents/GitHub/kickstart.nvim
 # alias nv="/usr/bin/nvim  -u /home/dgmastertemple/Downloads/nvim-refactored-2/nvim/init.lua"
 # alias nv="/usr/bin/nvim  -u /home/dgmastertemple/Development/lua/new-nvim-config/init.lua"
 alias nv="/usr/bin/nvim  -u /home/dgmastertemple/github/nvim-config/init.lua"
+alias lv="/usr/bin/nvim  -u /home/dgmastertemple/Development/lua/lazytemple/init.lua"
 alias nvi="neovide --neovim-bin /usr/bin/nvim -- -u /home/dgmastertemple/github/nvim-config/init.lua"
 
 
@@ -153,7 +154,7 @@ fi
 
 alias wifi='impala'
 
-alias sv='cd "$(tv files)"; nvim .' # files
+# alias sv='cd "$(tv files)"; nvim .' # files
 alias sd='cd "$(tv dirs)"' # directories
 alias so='cd ~/Obsidian && nvim "$(tv files)"' # obsidian files
 alias sn='cd ~/.config/nvim && nvim "$(tv files)"' # neovim files

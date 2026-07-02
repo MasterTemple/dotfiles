@@ -189,6 +189,8 @@ hl.config({
 		disable_hyprland_logo = true,
 		middle_click_paste = false,
 		disable_splash_rendering = true,
+		font_family = "JetBrainsMono Nerd Font",
+		splash_font_family = "JetBrainsMono Nerd Font",
 		-- If this is enabled, I automatically focus applications like Telegram when I receive a notification
 		-- focus_on_activate = true
 	},

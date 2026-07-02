@@ -67,3 +67,94 @@ hl.bind("SUPER + CONTROL + SHIFT + L", hl.dsp.exec_cmd("~/.local/share/mastertem
 hl.bind("SUPER + CONTROL + SHIFT + H", hl.dsp.exec_cmd("~/.local/share/mastertemple/scripts/cycle_window_left.sh"))
 
 -- bind = SUPER, M, exec, $HOME/.local/share/mastertemple/scripts/monitor_switcher.sh
+
+local workspaces_per_monitor = 10
+
+-- TODO: Figure this out
+--
+-- require("hyprlua.monitors.msi_1_monitor")
+-- require("hyprlua.monitors.msi_laptop_monitor")
+
+------------
+-- MIRROR --
+------------
+
+local laptop_monitor = "eDP-2"
+-- local laptop_monitor = "eDP-1"
+
+hl.monitor({
+	output = laptop_monitor,
+	mode = "1920x1080",
+	position = 1920.0 .. "x" .. 0.0,
+	scale = 1.0,
+	transform = 0,
+})
+
+hl.monitor({ output = "", mirror = laptop_monitor })
+
+hl.monitor({
+	output = "DVI-I-1",
+	disabled = true,
+})
+
+------------
+-- ?????? --
+------------
+
+-- hl.monitor({
+-- 	output = "DVI-I-2",
+-- 	mode = "1920x1080",
+-- 	position = 0.0 .. "x" .. 0.0,
+-- 	scale = 1.0,
+-- 	transform = 0,
+-- })
+--
+-- hl.monitor({
+-- 	output = "eDP-2",
+-- 	mode = "1920x1080",
+-- 	position = 1920.0 .. "x" .. 0.0,
+-- 	scale = 1.0,
+-- 	transform = 0,
+-- })
+--
+-- hl.monitor({
+-- 	output = "DVI-I-1",
+-- 	disabled = true,
+-- })
+
+-- TODO: Figure this out
+--
+-- hyprctl eval '
+-- local function table_to_string(tbl, indent)
+--     indent = indent or ""
+--     if type(tbl) ~= "table" then
+--         return tostring(tbl)
+--     end
+--
+--     local result = "{\n"
+--     local next_indent = indent .. "  "
+--
+--     for k, v in pairs(tbl) do
+--         -- Format the key
+--         local key = type(k) == "string" and string.format("[%q]", k) or string.format("[%s]", k)
+--
+--         -- Format the value
+--         local value
+--         if type(v) == "table" then
+--             value = table_to_string(v, next_indent)
+--         elseif type(v) == "string" then
+--             value = string.format("%q", v)
+--         else
+--             value = tostring(v)
+--         end
+--
+--         result = result .. next_indent .. key .. " = " .. value .. ",\n"
+--     end
+--
+--     return result .. indent .. "}"
+-- end
+-- hl.notification.create({
+-- 	text = table_to_string(hl.get_monitors()),
+-- 	timeout = 20000
+-- })
+-- '

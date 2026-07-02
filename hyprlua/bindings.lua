@@ -44,17 +44,25 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("/home/dgmastertemple/Documents/webapps_wofi"))
-hl.bind(mainMod .. " + CONTROL + R", hl.dsp.exec_cmd("hyprctl reload"))
+-- hl.bind(mainMod .. " + CONTROL + R", hl.dsp.exec_cmd("hyprctl reload"))
+
+-- Reload
+hl.bind("SUPER + SHIFT + R", function()
+	hl.notification.create({
+		text = "Config Reloaded Manually",
+		color = "#0000ff",
+		timeout = 2000,
+	})
+	hl.dsp.exec_cmd("hyprctl reload")
+end)
+
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(terminal .. " -e nvim"), { float = true })
+
 -- https://wiki.hypr.land/Configuring/Window-Rules/ & https://wiki.hypr.land/Configuring/Dispatchers/
 
 -- bind=SUPER,TAB,workspace,previous
--- hl.bind(mainMod .. " + TAB", hl.dsp.focus({ }))
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(terminal .. " -e btop"))
-
--- require("~/.local/share/mastertemple/hyprlua/bindings/media.lua")
--- require("~/.local/share/mastertemple/hyprlua/bindings/tiling.lua")
--- require("~/.local/share/mastertemple/hyprlua/bindings/utilities.lua")
 
 require("hyprlua.bindings.media")
 require("hyprlua.bindings.tiling")

@@ -1,4 +1,16 @@
 hl.on("hyprland.start", function()
+	if ARTIX then
+		local cmds = {
+			"pipewire",
+			"wireplumber",
+			"pipewire-pulse",
+		}
+		for _, cmd in ipairs(cmds) do
+			hl.exec_cmd(cmd)
+		end
+	end
+
+
 	hl.exec_cmd("dropbox-cli start")
 
 	-- Stores only text data
@@ -11,10 +23,21 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("swaybg -i ~/.config/omarchy/current/background -m fill")
 	hl.exec_cmd("swayosd-server")
 	hl.exec_cmd("walker --gapplication-service")
+
+	if ARTIX then
+		hl.exec_cmd("elephant")
+	end
+
 	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 	hl.exec_cmd("wl-clip-persist --clipboard regular --all-mime-type-regex '^(?!x-kde-passwordManagerHint).+'")
+	hl.exec_cmd("omarchy-restart-swayosd")
 
 	hl.exec_cmd("[workspace 1] alacritty -e tmux")
+
+
+	if ARTIX then
+		hl.exec_cmd("hyprlock")
+	end
 end)
 
 --[[

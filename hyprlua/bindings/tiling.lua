@@ -114,7 +114,12 @@ bindm = SUPER, mouse:273, resizewindow
 -- Close window
 -- TODO:
 -- bind = SUPER, Q, killactive,
-hl.bind("SUPER + Q", hl.dsp.window.kill("activewindow"))
+-- hl.bind("SUPER + Q", hl.dsp.window.kill("activewindow"))
+-- hl.bind("SUPER + Q", hl.dsp.window.kill())
+hl.bind("SUPER + Q", hl.dsp.window.kill())
+-- hl.bind("SUPER + W", hl.dsp.window.kill())
+-- TODO: Don't kill all Chrome panes, just the active
+-- hl.bind("SUPER + Q", hl.dsp.window.close())
 
 -- Control tiling
 -- TODO:
@@ -123,8 +128,10 @@ hl.bind("SUPER + Q", hl.dsp.window.kill("activewindow"))
 -- TODO:
 -- bind = SUPER, Z, exec, bash -c "if hyprctl getwindowinfo | grep -q 'floating: true'; then hyprctl dispatch hidewindow; else hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 80% 80%; hyprctl dispatch centerwindow; fi"
 -- bind = SUPER, C, centerwindow
--- bind = SUPER, F, fullscreen
--- bind = SUPER, F11, fullscreen
+-- hl.bind("SUPER + C", hl.dsp.window.center())
+
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind("SUPER + F11", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- TODO:
 -- hl.bind("SUPER + N", "changegroupactive, f")
@@ -163,14 +170,12 @@ for i, entry in ipairs(directions) do
 	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.swap({ direction = direction }))
 
 	-- Focus monitor in direction
-	-- TODO: bind = SUPER CONTROL, H, focusmonitor, l
-	hl.bind("SUPER + CONTROL + " .. direction, hl.dsp.focus({ monitor = direction }))
+	hl.bind("SUPER + CONTROL + " .. arrow, hl.dsp.focus({ monitor = direction }))
 	hl.bind("SUPER + CONTROL + " .. key, hl.dsp.focus({ monitor = direction }))
 
 	-- Move window to monitor
-	-- TODO: bind = SUPER CONTROL SHIFT, H, movewindow, mon:l
-	hl.bind("SUPER + CONTROL + SHIFT + " .. direction, hl.dsp.window.move({ direction = direction }))
-	hl.bind("SUPER + CONTROL + SHIFT + " .. key, hl.dsp.window.move({ direction = direction }))
+	hl.bind("SUPER + CONTROL + SHIFT + " .. arrow, hl.dsp.window.move({ monitor = direction }))
+	hl.bind("SUPER + CONTROL + SHIFT + " .. key, hl.dsp.window.move({ monitor = direction }))
 end
 
 -- Resize active window
