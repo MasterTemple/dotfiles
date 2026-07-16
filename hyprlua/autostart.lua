@@ -1,9 +1,12 @@
 hl.on("hyprland.start", function()
 	if ARTIX then
 		local cmds = {
+			"dbus-update-activation-environment --all WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
 			"pipewire",
 			"wireplumber",
 			"pipewire-pulse",
+			"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+			"/usr/lib/xdg-desktop-portal-hyprland",
 		}
 		for _, cmd in ipairs(cmds) do
 			hl.exec_cmd(cmd)
@@ -20,15 +23,15 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("mako")
 	hl.exec_cmd("waybar")
-	hl.exec_cmd("swaybg -i ~/.config/omarchy/current/background -m fill")
 	hl.exec_cmd("swayosd-server")
+	hl.exec_cmd("swaybg -i ~/.config/omarchy/current/background -m fill")
 	hl.exec_cmd("walker --gapplication-service")
 
 	if ARTIX then
 		hl.exec_cmd("elephant")
 	end
 
-	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+	-- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 	hl.exec_cmd("wl-clip-persist --clipboard regular --all-mime-type-regex '^(?!x-kde-passwordManagerHint).+'")
 	hl.exec_cmd("omarchy-restart-swayosd")
 
@@ -36,6 +39,7 @@ hl.on("hyprland.start", function()
 
 
 	if ARTIX then
+		hl.exec_cmd("sudo sv restart power-profiles-daemon")
 		hl.exec_cmd("hyprlock")
 	end
 end)

@@ -2,6 +2,8 @@
 # Setup + Aliases
 # ----------------------------
 
+set -euo pipefail
+
 MT=~/.local/share/mastertemple
 
 # bashrc
@@ -10,15 +12,30 @@ echo "source ~/.local/share/mastertemple/bash/rc" >> ~/.bashrc
 # I don't want to retype the flags
 alias yayi="yay -S --needed --noconfirm"
 
+RUNIT_SV=/etc/runit/sv
+RUNIT_SERVICE=/run/runit/service/
+
+enable_service() {
+	if [ ! -e "/run/runit/service/$1" ]; then
+		sudo ln -s "/etc/runit/sv/$1" /run/runit/service/
+	else
+		echo "$1 already enabled, skipping symlink."
+	fi
+}
+
 # ----------------------------
 # Installers
 # ----------------------------
 
 # yay
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+mkdir -p ~/.github
+(
+	cd ~/.github
+	sudo pacman -S --needed git base-devel
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+)
 
 # rust / cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -39,8 +56,20 @@ cargo binstall bluetui
 yayi bluez-runit bluez-utils
 sudo ln -s /etc/runit/sv/bluetoothd /run/runit/service/
 
+# Audio
+#yayi pavucontrol
+yayi wiremix-git
+
+# Brightness
+yayi brightnessctl
+
+# TODO: Sound (likely from that video I watched)
+
 # Cron
 yayi cronie-runit
+
+# Monitors
+# yayi evdi-dkms displaylink linux-headers dkms wlr-randr
 
 # ----------------------------
 # Terminal
@@ -121,9 +150,40 @@ yayi hyprland hyprpicker hyprshot hyprlock
 ln -s "$MT/hyprlua" ~/.config/hypr/hyprlua
 echo "require(\"hyprlua.load\")" >> ~/.config/hypr/hyprland.lua
 
+# Ask for permissions
+yayi polkit-gnome
+sudo ln -s /etc/runit/sv/polkit /run/runit/service
+
 # Waybar
 yayi waybar
 ln -s "$MT/waybar" ~/.config/waybar
+
+# Power Profiles
+yayi power-profiles-daemon
+
+# Create the runit service directory
+sudo mkdir -p /etc/runit/sv/power-profiles-daemon
+
+# Write the run script as root, with a real newline and correct permissions
+sudo tee /etc/runit/sv/power-profiles-daemon/run > /dev/null <<'EOF'
+#!/bin/sh
+exec /usr/lib/power-profiles-daemon
+EOF
+
+sudo chmod +x /etc/runit/sv/power-profiles-daemon/run
+
+# # Enable the service (skip if already linked)
+# if [ ! -e /run/runit/service/power-profiles-daemon ]; then
+#     sudo ln -s /etc/runit/sv/power-profiles-daemon /run/runit/service/
+# else
+#     echo "Service already enabled, skipping symlink."
+# fi
+
+[[ ! -e /run/runit/service/power-profiles-daemon ]] \
+	&& sudo ln -s /etc/runit/sv/power-profiles-daemon /run/runit/service/
+
+# # TODO: Is this right?
+# enable_service("power-profiles-daemon")
 
 # SwayOSD
 yayi swayosd-git
@@ -172,8 +232,6 @@ yayi
 	imv \
 	# File manager
 	nautilus \
-	# Ask for permissions
-	polkit-gnome \
 	# Share files
 	localsend-bin \
 	# Notifications

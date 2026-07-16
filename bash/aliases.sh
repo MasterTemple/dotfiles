@@ -92,7 +92,6 @@ alias cdp='realpath "$(tv dirs)" | wl-copy' # copy directory path
 
 alias v='nvim'
 alias x='exit'
-alias gn="echo Goodnight!;systemctl poweroff;"
 alias hide="echo Sleeping...;systemctl suspend;"
 alias h="hide"
 

@@ -1,0 +1,1 @@
+alias gn="loginctl poweroff"

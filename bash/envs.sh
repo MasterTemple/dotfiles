@@ -1,5 +1,4 @@
 # Editor used by CLI
-MT=~/.local/share/mastertemple
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="$EDITOR"
